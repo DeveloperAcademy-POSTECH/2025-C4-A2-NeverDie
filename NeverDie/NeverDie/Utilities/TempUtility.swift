@@ -1,0 +1,10 @@
+//
+//  TempUtility.swift
+//  NeverDie
+//
+//  Created by theo on 7/17/25.
+//
+
+import Foundation
+
+// TODO: 이 파일은 임시 파일입니다. 실제 유틸리티를 구현할 때 삭제하세요. 
