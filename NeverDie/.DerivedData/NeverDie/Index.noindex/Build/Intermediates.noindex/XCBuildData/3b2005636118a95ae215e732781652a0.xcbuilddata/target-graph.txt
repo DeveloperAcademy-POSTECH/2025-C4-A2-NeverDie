@@ -1,0 +1,13 @@
+Target dependency graph (8 targets)
+Target 'NeverDieUITests' in project 'NeverDie' (no dependencies)
+Target 'NeverDieUITests' in project 'NeverDie'
+➜ Explicit dependency on target 'NeverDie' in project 'NeverDie'
+Target 'NeverDieUITests' in project 'NeverDie'
+➜ Explicit dependency on target 'NeverDie' in project 'NeverDie'
+Target 'NeverDieTests' in project 'NeverDie' (no dependencies)
+Target 'NeverDieTests' in project 'NeverDie'
+➜ Explicit dependency on target 'NeverDie' in project 'NeverDie'
+Target 'NeverDieTests' in project 'NeverDie'
+➜ Explicit dependency on target 'NeverDie' in project 'NeverDie'
+Target 'NeverDie' in project 'NeverDie' (no dependencies)
+Target 'NeverDie' in project 'NeverDie' (no dependencies)
