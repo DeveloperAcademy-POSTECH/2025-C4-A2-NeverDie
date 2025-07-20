@@ -79,6 +79,9 @@ extension DeveloperToolsSupport.ColorResource {
 @available(iOS 17.0, macOS 14.0, tvOS 17.0, watchOS 10.0, *)
 extension DeveloperToolsSupport.ImageResource {
 
+    /// The "walkingIcon" asset catalog image resource.
+    static let walkingIcon = DeveloperToolsSupport.ImageResource(name: "walkingIcon", bundle: resourceBundle)
+
 }
 
 // MARK: - Color Symbol Extensions -
@@ -502,6 +505,15 @@ extension SwiftUI.ShapeStyle where Self == SwiftUI.Color {
 @available(macCatalyst, unavailable)
 extension AppKit.NSImage {
 
+    /// The "walkingIcon" asset catalog image.
+    static var walkingIcon: AppKit.NSImage {
+#if !targetEnvironment(macCatalyst)
+        .init(resource: .walkingIcon)
+#else
+        .init()
+#endif
+    }
+
 }
 #endif
 
@@ -509,6 +521,15 @@ extension AppKit.NSImage {
 @available(iOS 17.0, tvOS 17.0, *)
 @available(watchOS, unavailable)
 extension UIKit.UIImage {
+
+    /// The "walkingIcon" asset catalog image.
+    static var walkingIcon: UIKit.UIImage {
+#if !os(watchOS)
+        .init(resource: .walkingIcon)
+#else
+        .init()
+#endif
+    }
 
 }
 #endif
@@ -630,6 +651,26 @@ extension DeveloperToolsSupport.ImageResource {
     }
 
 }
+
+#if canImport(AppKit)
+@available(macOS 14.0, *)
+@available(macCatalyst, unavailable)
+extension AppKit.NSImage {
+
+    private convenience init?(thinnableResource: DeveloperToolsSupport.ImageResource?) {
+#if !targetEnvironment(macCatalyst)
+        if let resource = thinnableResource {
+            self.init(resource: resource)
+        } else {
+            return nil
+        }
+#else
+        return nil
+#endif
+    }
+
+}
+#endif
 
 #if canImport(UIKit)
 @available(iOS 17.0, tvOS 17.0, *)

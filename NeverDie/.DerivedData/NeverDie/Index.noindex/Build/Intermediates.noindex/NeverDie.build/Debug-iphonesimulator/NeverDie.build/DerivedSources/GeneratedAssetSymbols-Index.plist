@@ -166,7 +166,18 @@
 		</dict>
 	</array>
 	<key>images</key>
-	<array/>
+	<array>
+		<dict>
+			<key>catalogPath</key>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Assets.xcassets</string>
+			<key>objcSymbol</key>
+			<string>ACImageNameWalkingIcon</string>
+			<key>relativePath</key>
+			<string>./walkingIcon.imageset</string>
+			<key>swiftSymbol</key>
+			<string>walkingIcon</string>
+		</dict>
+	</array>
 	<key>symbols</key>
 	<array/>
 </dict>

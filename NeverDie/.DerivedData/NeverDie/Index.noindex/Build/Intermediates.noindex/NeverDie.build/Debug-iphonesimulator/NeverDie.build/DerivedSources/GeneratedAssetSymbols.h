@@ -57,4 +57,7 @@ static NSString * const ACColorNameOrange01 AC_SWIFT_PRIVATE = @"orange01";
 /// The "white01" asset catalog color resource.
 static NSString * const ACColorNameWhite01 AC_SWIFT_PRIVATE = @"white01";
 
+/// The "walkingIcon" asset catalog image resource.
+static NSString * const ACImageNameWalkingIcon AC_SWIFT_PRIVATE = @"walkingIcon";
+
 #undef AC_SWIFT_PRIVATE
