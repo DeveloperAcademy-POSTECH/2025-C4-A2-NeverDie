@@ -4,17 +4,25 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Assets.car</key>
+		<data>
+		UOK7brwPG1WynHm7LcDpkmFw0UI=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		P79raRK0u28OBnDGUqqfwCOqhzQ=
+		GV46D1Q0Vp+ZVBeQqqmLBz1SjXE=
 		</data>
 		<key>NeverDie.debug.dylib</key>
 		<data>
-		BNCCM2G5yrECpdIZHQUqIH1jfJ4=
+		ahBccjOW+/aubgfTM6NkwUY+1iI=
 		</data>
 		<key>PkgInfo</key>
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
+		</data>
+		<key>PretendardVariable.ttf</key>
+		<data>
+		ibBaLxjHb43rV3UF1II3EnzPyQg=
 		</data>
 		<key>__preview.dylib</key>
 		<data>
@@ -23,11 +31,25 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3kxXSIOuKZ/HQsWUKZTmjdlLSl0Pp8GBaOrcuNLjEgE=
+			</data>
+		</dict>
 		<key>NeverDie.debug.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NT9w1kvq+RBQvv2oi7gCoHpHGdp7/3T3A1n6hANOK4Q=
+			9PnkNMuDd2okuMwk7U0rBGvrQD3rsvS20Ufb8Q1gdow=
+			</data>
+		</dict>
+		<key>PretendardVariable.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			MJDM3gRCuzR6p2hdm6ixdDamBoLfbo+SqaZw3hQFbiI=
 			</data>
 		</dict>
 		<key>__preview.dylib</key>

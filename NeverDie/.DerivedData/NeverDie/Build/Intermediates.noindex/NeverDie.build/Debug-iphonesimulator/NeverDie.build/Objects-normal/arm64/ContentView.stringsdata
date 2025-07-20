@@ -7,23 +7,23 @@
         "key": "Item at %@",
         "location": {
           "startingColumn": 30,
-          "startingLine": 26
+          "startingLine": 20
         }
       },
       {
         "comment": "",
         "key": "Add Item",
         "location": {
-          "startingColumn": 70,
-          "startingLine": 39
+          "startingColumn": 31,
+          "startingLine": 33
         }
       },
       {
         "comment": "",
         "key": "Select an item",
         "location": {
-          "startingColumn": 57,
-          "startingLine": 44
+          "startingColumn": 18,
+          "startingLine": 38
         }
       }
     ]
