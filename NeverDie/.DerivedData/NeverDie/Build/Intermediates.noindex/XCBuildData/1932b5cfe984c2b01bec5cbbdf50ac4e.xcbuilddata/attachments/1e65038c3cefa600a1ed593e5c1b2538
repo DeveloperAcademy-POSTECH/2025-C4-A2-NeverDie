@@ -1,0 +1,128 @@
+{
+  "" : {
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/NeverDie-master.dia",
+    "emit-module-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/NeverDie-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/NeverDie-master-emit-module.dia",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/NeverDie-master.swiftdeps"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/ContentView.swift" : {
+    "const-values" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Extensions/TempExtension.swift" : {
+    "const-values" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempExtension.swiftconstvalues",
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempExtension.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempExtension.dia",
+    "index-unit-output-path" : "/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempExtension.o",
+    "llvm-bc" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempExtension.bc",
+    "object" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempExtension.o",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempExtension.swiftdeps",
+    "swiftmodule" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempExtension~partial.swiftmodule"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Item.swift" : {
+    "const-values" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/Item.swiftconstvalues",
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/Item.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/Item.dia",
+    "index-unit-output-path" : "/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/Item.o",
+    "llvm-bc" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/Item.bc",
+    "object" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/Item.o",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/Item.swiftdeps",
+    "swiftmodule" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/Item~partial.swiftmodule"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Models/TempModel.swift" : {
+    "const-values" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempModel.swiftconstvalues",
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempModel.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempModel.dia",
+    "index-unit-output-path" : "/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempModel.o",
+    "llvm-bc" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempModel.bc",
+    "object" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempModel.o",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempModel.swiftdeps",
+    "swiftmodule" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempModel~partial.swiftmodule"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/NeverDieApp.swift" : {
+    "const-values" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/NeverDieApp.swiftconstvalues",
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/NeverDieApp.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/NeverDieApp.dia",
+    "index-unit-output-path" : "/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/NeverDieApp.o",
+    "llvm-bc" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/NeverDieApp.bc",
+    "object" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/NeverDieApp.o",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/NeverDieApp.swiftdeps",
+    "swiftmodule" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/NeverDieApp~partial.swiftmodule"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Services/TempService.swift" : {
+    "const-values" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempService.swiftconstvalues",
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempService.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempService.dia",
+    "index-unit-output-path" : "/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempService.o",
+    "llvm-bc" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempService.bc",
+    "object" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempService.o",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempService.swiftdeps",
+    "swiftmodule" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempService~partial.swiftmodule"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Utilities/TempUtility.swift" : {
+    "const-values" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempUtility.swiftconstvalues",
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempUtility.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempUtility.dia",
+    "index-unit-output-path" : "/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempUtility.o",
+    "llvm-bc" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempUtility.bc",
+    "object" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempUtility.o",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempUtility.swiftdeps",
+    "swiftmodule" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempUtility~partial.swiftmodule"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/ViewModels/TempViewModel.swift" : {
+    "const-values" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempViewModel.swiftconstvalues",
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempViewModel.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempViewModel.dia",
+    "index-unit-output-path" : "/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempViewModel.o",
+    "llvm-bc" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempViewModel.bc",
+    "object" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempViewModel.o",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempViewModel.swiftdeps",
+    "swiftmodule" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempViewModel~partial.swiftmodule"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Views/Components/TempComponent.swift" : {
+    "const-values" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempComponent.swiftconstvalues",
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempComponent.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempComponent.dia",
+    "index-unit-output-path" : "/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempComponent.o",
+    "llvm-bc" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempComponent.bc",
+    "object" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempComponent.o",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempComponent.swiftdeps",
+    "swiftmodule" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempComponent~partial.swiftmodule"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Views/Screens/TempScreen.swift" : {
+    "const-values" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempScreen.swiftconstvalues",
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempScreen.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempScreen.dia",
+    "index-unit-output-path" : "/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempScreen.o",
+    "llvm-bc" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempScreen.bc",
+    "object" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempScreen.o",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempScreen.swiftdeps",
+    "swiftmodule" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempScreen~partial.swiftmodule"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Views/TempView.swift" : {
+    "const-values" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempView.swiftconstvalues",
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempView.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempView.dia",
+    "index-unit-output-path" : "/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempView.o",
+    "llvm-bc" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempView.bc",
+    "object" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempView.o",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempView.swiftdeps",
+    "swiftmodule" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/Objects-normal/arm64/TempView~partial.swiftmodule"
+  }
+}

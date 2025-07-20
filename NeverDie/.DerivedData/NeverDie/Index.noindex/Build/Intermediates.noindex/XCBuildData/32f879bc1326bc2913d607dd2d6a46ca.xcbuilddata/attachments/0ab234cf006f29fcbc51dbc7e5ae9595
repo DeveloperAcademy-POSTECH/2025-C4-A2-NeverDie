@@ -1,0 +1,15 @@
+{
+  "" : {
+    "dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Index.noindex/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDieUITests.build/Objects-normal/arm64/NeverDieUITests-master.d",
+    "diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Index.noindex/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDieUITests.build/Objects-normal/arm64/NeverDieUITests-master.dia",
+    "emit-module-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Index.noindex/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDieUITests.build/Objects-normal/arm64/NeverDieUITests-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Index.noindex/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDieUITests.build/Objects-normal/arm64/NeverDieUITests-master-emit-module.dia",
+    "swift-dependencies" : "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Index.noindex/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDieUITests.build/Objects-normal/arm64/NeverDieUITests-master.swiftdeps"
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDieUITests/NeverDieUITests.swift" : {
+
+  },
+  "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDieUITests/NeverDieUITestsLaunchTests.swift" : {
+
+  }
+}

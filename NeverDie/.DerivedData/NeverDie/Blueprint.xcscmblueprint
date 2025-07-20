@@ -1,0 +1,23 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A2A65AE5B7A5DFCE0719449E3D6495C1EE541C71",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A2A65AE5B7A5DFCE0719449E3D6495C1EE541C71" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EFA7E501-74AD-45C5-A445-36EC25E2B714",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A2A65AE5B7A5DFCE0719449E3D6495C1EE541C71" : "2025-C4-A2-NeverDie\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "NeverDie",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "NeverDie\/NeverDie.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/DeveloperAcademy-POSTECH\/2025-C4-A2-NeverDie.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A2A65AE5B7A5DFCE0719449E3D6495C1EE541C71"
+    }
+  ]
+}

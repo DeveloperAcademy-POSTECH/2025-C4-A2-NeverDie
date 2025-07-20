@@ -1,0 +1,18 @@
+version: "Apple Swift version 6.0.3 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)"
+options: "4e61399bc494648aed5738ec7daeb32b411535314ff094c421802dfa51c5df49"
+build_start_time: [1752735413, 404135000]
+build_end_time: [1752735413, 573685000]
+inputs:
+  ? "/Users/giljeongsu/Desktop/\U0001F34E/C4/2025-C4-A2-NeverDie/NeverDie/.DerivedData/NeverDie/Index.noindex/Build/Intermediates.noindex/NeverDie.build/Debug-iphonesimulator/NeverDie.build/DerivedSources/GeneratedAssetSymbols.swift"
+  : [1752735410, 479190742]
+  "/Users/giljeongsu/Desktop/\U0001F34E/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/ContentView.swift": [1752735082, 599281813]
+  "/Users/giljeongsu/Desktop/\U0001F34E/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Extensions/TempExtension.swift": [1752735082, 599495685]
+  "/Users/giljeongsu/Desktop/\U0001F34E/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Item.swift": [1752735082, 599626641]
+  "/Users/giljeongsu/Desktop/\U0001F34E/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Models/TempModel.swift": [1752735082, 599821596]
+  "/Users/giljeongsu/Desktop/\U0001F34E/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/NeverDieApp.swift": [1752735082, 599960511]
+  "/Users/giljeongsu/Desktop/\U0001F34E/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Services/TempService.swift": [1752735082, 600160424]
+  "/Users/giljeongsu/Desktop/\U0001F34E/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Utilities/TempUtility.swift": [1752735082, 600349463]
+  "/Users/giljeongsu/Desktop/\U0001F34E/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/ViewModels/TempViewModel.swift": [1752735082, 600536335]
+  "/Users/giljeongsu/Desktop/\U0001F34E/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Views/Components/TempComponent.swift": [1752735082, 600768998]
+  "/Users/giljeongsu/Desktop/\U0001F34E/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Views/Screens/TempScreen.swift": [1752735082, 600948745]
+  "/Users/giljeongsu/Desktop/\U0001F34E/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Views/TempView.swift": [1752735082, 601067202]
