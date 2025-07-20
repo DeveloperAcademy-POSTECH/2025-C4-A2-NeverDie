@@ -3,7 +3,7 @@ import func SwiftUI.__designTimeString
 import func SwiftUI.__designTimeInteger
 import func SwiftUI.__designTimeBoolean
 
-#sourceLocation(file: "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Views/Components/TopTabBar.swift", line: 1)
+#sourceLocation(file: "/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Views/Tab/TopTabBar.swift", line: 1)
 //
 //  TopTabBar.swift
 //  NeverDie
@@ -23,8 +23,8 @@ struct TopTabBar: View {
     @State var selectedTab: Tab = .home
     
     var body: some View {
-        VStack (spacing: __designTimeInteger("#5198_0", fallback: 10)) {
-            HStack(spacing: __designTimeInteger("#5198_1", fallback: 4)) {
+        VStack (spacing: __designTimeInteger("#19612_0", fallback: 10)) {
+            HStack(spacing: __designTimeInteger("#19612_1", fallback: 4)) {
                 ForEach(Tab.allCases, id: \.self) { tab in
                     tabButton(for: tab)
                 }
@@ -42,7 +42,7 @@ struct TopTabBar: View {
                 }
             }
         }
-        .padding(.horizontal, __designTimeInteger("#5198_2", fallback: 24))
+        .padding(.horizontal, __designTimeInteger("#19612_2", fallback: 24))
     }
     
     private func tabButton(for tab: Tab) -> some View {
@@ -52,8 +52,8 @@ struct TopTabBar: View {
             Text(tab.rawValue)
                 .font(.titleBold28)
                 .foregroundColor(selectedTab == tab ? .green03 : .grayCaption01)
-                .figmaLineHeight(fontSize: __designTimeInteger("#5198_3", fallback: 28))
-                .padding(.horizontal, __designTimeInteger("#5198_4", fallback: 5))
+                .figmaLineHeight(fontSize: __designTimeInteger("#19612_3", fallback: 28))
+                .padding(.horizontal, __designTimeInteger("#19612_4", fallback: 5))
         }
     }
 }
