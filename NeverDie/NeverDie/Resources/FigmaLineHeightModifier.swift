@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FigmaLineHeightModifier: ViewModifier {
     let fontSize: CGFloat
-    let lineHeight: CGFloat
+    var lineHeight: CGFloat { fontSize * 1.3 }
 
     func body(content: Content) -> some View {
         let extraSpace = lineHeight - fontSize
@@ -22,7 +22,7 @@ struct FigmaLineHeightModifier: ViewModifier {
 
 extension View {
     func figmaLineHeight(fontSize: CGFloat, lineHeight: CGFloat) -> some View {
-        self.modifier(FigmaLineHeightModifier(fontSize: fontSize, lineHeight: lineHeight))
+        self.modifier(FigmaLineHeightModifier(fontSize: fontSize))
     }
 }
 
