@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameBlack01</string>
 			<key>relativePath</key>
@@ -16,7 +16,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameBlue01</string>
 			<key>relativePath</key>
@@ -26,7 +26,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameBrown01</string>
 			<key>relativePath</key>
@@ -36,7 +36,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameBrown02</string>
 			<key>relativePath</key>
@@ -46,7 +46,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameGrayCaption00</string>
 			<key>relativePath</key>
@@ -56,7 +56,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameGrayCaption01</string>
 			<key>relativePath</key>
@@ -66,7 +66,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameGrayCaption02</string>
 			<key>relativePath</key>
@@ -76,7 +76,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameGrayCaption03</string>
 			<key>relativePath</key>
@@ -86,7 +86,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameGreen01</string>
 			<key>relativePath</key>
@@ -96,7 +96,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameGreen02</string>
 			<key>relativePath</key>
@@ -106,7 +106,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameGreen03</string>
 			<key>relativePath</key>
@@ -116,7 +116,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameGreenChart01Linear01</string>
 			<key>relativePath</key>
@@ -126,7 +126,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameGreenChart01Linear02</string>
 			<key>relativePath</key>
@@ -136,7 +136,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameGreenChart02</string>
 			<key>relativePath</key>
@@ -146,7 +146,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameOrange01</string>
 			<key>relativePath</key>
@@ -156,7 +156,7 @@
 		</dict>
 		<dict>
 			<key>catalogPath</key>
-			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Color.xcassets</string>
+			<string>/Users/giljeongsu/Desktop/🍎/C4/2025-C4-A2-NeverDie/NeverDie/NeverDie/Resources/Color.xcassets</string>
 			<key>objcSymbol</key>
 			<string>ACColorNameWhite01</string>
 			<key>relativePath</key>

@@ -1,3 +1,0 @@
-Target dependency graph (2 targets)
-Target 'NeverDie' in project 'NeverDie' (no dependencies)
-Target 'NeverDie' in project 'NeverDie' (no dependencies)

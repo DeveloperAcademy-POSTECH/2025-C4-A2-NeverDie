@@ -6,7 +6,7 @@
 	<integer>11</integer>
 	<key>logs</key>
 	<dict>
-		<key>19D13524-BF7B-403B-9ED5-0B7B914B9E21</key>
+		<key>16EAF089-8E3D-4AC8-92A8-0CBA7AC2FFE1</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>19D13524-BF7B-403B-9ED5-0B7B914B9E21.xcactivitylog</string>
+			<string>16EAF089-8E3D-4AC8-92A8-0CBA7AC2FFE1.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -40,13 +40,643 @@
 			<key>signature</key>
 			<string>Build (Automatic) NeverDie</string>
 			<key>timeStartedRecording</key>
-			<real>774428292.78440201</real>
+			<real>774693090.55582201</real>
 			<key>timeStoppedRecording</key>
-			<real>774428300.12767005</real>
+			<real>774693091.17487299</real>
 			<key>title</key>
 			<string>Build (Automatic) NeverDie</string>
 			<key>uniqueIdentifier</key>
-			<string>19D13524-BF7B-403B-9ED5-0B7B914B9E21</string>
+			<string>16EAF089-8E3D-4AC8-92A8-0CBA7AC2FFE1</string>
+		</dict>
+		<key>2987B854-45F7-48E5-9DA4-99DD80814422</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>2987B854-45F7-48E5-9DA4-99DD80814422.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>3</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692872.31058097</real>
+			<key>timeStoppedRecording</key>
+			<real>774692872.74804497</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>2987B854-45F7-48E5-9DA4-99DD80814422</string>
+		</dict>
+		<key>3601FDB3-D6E8-4F64-B5EF-58B2746A089E</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>3601FDB3-D6E8-4F64-B5EF-58B2746A089E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>1</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692878.45692098</real>
+			<key>timeStoppedRecording</key>
+			<real>774692878.89830804</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>3601FDB3-D6E8-4F64-B5EF-58B2746A089E</string>
+		</dict>
+		<key>4C354543-E368-4310-8530-DB7A5E40BCC2</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>4C354543-E368-4310-8530-DB7A5E40BCC2.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692447.41370404</real>
+			<key>timeStoppedRecording</key>
+			<real>774692449.03451705</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>4C354543-E368-4310-8530-DB7A5E40BCC2</string>
+		</dict>
+		<key>56E5B4F2-B480-4484-B38D-B3082A7B89E0</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>56E5B4F2-B480-4484-B38D-B3082A7B89E0.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692821.58803201</real>
+			<key>timeStoppedRecording</key>
+			<real>774692822.26568902</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>56E5B4F2-B480-4484-B38D-B3082A7B89E0</string>
+		</dict>
+		<key>5D05E82D-4003-416B-8853-56FDE4253119</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>5D05E82D-4003-416B-8853-56FDE4253119.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692825.07939506</real>
+			<key>timeStoppedRecording</key>
+			<real>774692825.59372699</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>5D05E82D-4003-416B-8853-56FDE4253119</string>
+		</dict>
+		<key>6531F0C0-9829-4C52-9A68-03BF6EC0E76F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>6531F0C0-9829-4C52-9A68-03BF6EC0E76F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692860.23168302</real>
+			<key>timeStoppedRecording</key>
+			<real>774692860.72371304</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>6531F0C0-9829-4C52-9A68-03BF6EC0E76F</string>
+		</dict>
+		<key>76E9E07B-9E76-4F03-8C76-E3E414A41CA9</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>76E9E07B-9E76-4F03-8C76-E3E414A41CA9.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>2</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692818.45407104</real>
+			<key>timeStoppedRecording</key>
+			<real>774692818.71937895</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>76E9E07B-9E76-4F03-8C76-E3E414A41CA9</string>
+		</dict>
+		<key>845FD343-552B-4894-B4E1-F1D1D89FA504</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>845FD343-552B-4894-B4E1-F1D1D89FA504.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692496.96997797</real>
+			<key>timeStoppedRecording</key>
+			<real>774692497.59599996</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>845FD343-552B-4894-B4E1-F1D1D89FA504</string>
+		</dict>
+		<key>97181610-610F-40DF-AA04-F9CA4138B7A2</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>97181610-610F-40DF-AA04-F9CA4138B7A2.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692792.81021297</real>
+			<key>timeStoppedRecording</key>
+			<real>774692794.92752504</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>97181610-610F-40DF-AA04-F9CA4138B7A2</string>
+		</dict>
+		<key>ABAAF709-AF36-485E-BBF2-1661AD4C66A7</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>ABAAF709-AF36-485E-BBF2-1661AD4C66A7.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692889.29110706</real>
+			<key>timeStoppedRecording</key>
+			<real>774692889.79890096</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>ABAAF709-AF36-485E-BBF2-1661AD4C66A7</string>
+		</dict>
+		<key>BB73B516-8C14-4171-B77B-A74C01A19B68</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>BB73B516-8C14-4171-B77B-A74C01A19B68.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692907.05081797</real>
+			<key>timeStoppedRecording</key>
+			<real>774692907.86068594</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>BB73B516-8C14-4171-B77B-A74C01A19B68</string>
+		</dict>
+		<key>C8D05848-4005-4218-ABB1-59A398570316</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C8D05848-4005-4218-ABB1-59A398570316.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692809.87128198</real>
+			<key>timeStoppedRecording</key>
+			<real>774692810.69562697</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>C8D05848-4005-4218-ABB1-59A398570316</string>
+		</dict>
+		<key>D359F8CF-6D7D-4C1E-B64A-1FC77BDDF98F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D359F8CF-6D7D-4C1E-B64A-1FC77BDDF98F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774692816.82420099</real>
+			<key>timeStoppedRecording</key>
+			<real>774692817.73143899</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>D359F8CF-6D7D-4C1E-B64A-1FC77BDDF98F</string>
+		</dict>
+		<key>DCC51D50-129A-42C8-8F7B-8A8627415C33</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>DCC51D50-129A-42C8-8F7B-8A8627415C33.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774693184.44875097</real>
+			<key>timeStoppedRecording</key>
+			<real>774693184.99462903</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>DCC51D50-129A-42C8-8F7B-8A8627415C33</string>
+		</dict>
+		<key>EBAC78C0-9866-4488-828F-F0CAD49DC2A8</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>EBAC78C0-9866-4488-828F-F0CAD49DC2A8.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>NeverDie project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>NeverDie</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>timeStartedRecording</key>
+			<real>774693358.53401899</real>
+			<key>timeStoppedRecording</key>
+			<real>774693359.23588896</real>
+			<key>title</key>
+			<string>Build (Automatic) NeverDie</string>
+			<key>uniqueIdentifier</key>
+			<string>EBAC78C0-9866-4488-828F-F0CAD49DC2A8</string>
 		</dict>
 	</dict>
 </dict>

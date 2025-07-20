@@ -21,7 +21,7 @@ struct FigmaLineHeightModifier: ViewModifier {
 }
 
 extension View {
-    func figmaLineHeight(fontSize: CGFloat, lineHeight: CGFloat) -> some View {
+    func figmaLineHeight(fontSize: CGFloat) -> some View {
         self.modifier(FigmaLineHeightModifier(fontSize: fontSize))
     }
 }
