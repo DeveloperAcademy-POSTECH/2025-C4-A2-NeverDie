@@ -23,6 +23,7 @@ struct TopTabBar: View {
                     tabButton(for: tab)
                 }
             }
+            .safeAreaPadding(.horizontal, 24)
             .frame(maxWidth: .infinity, alignment: .leading)
 
             Group {
@@ -36,7 +37,6 @@ struct TopTabBar: View {
                 }
             }
         }
-        .padding(.horizontal, 24)
     }
     
     private func tabButton(for tab: Tab) -> some View {
