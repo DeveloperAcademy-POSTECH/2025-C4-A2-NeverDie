@@ -12,7 +12,7 @@ struct TodayLifeSaving: View {
     let lifeSaving: String
     
     var body: some View {
-        Button (action: {
+        Button(action: {
             print("오늘의 수명 저축량 클릭")
         }, label: {
             VStack(spacing: 10) {
@@ -39,6 +39,7 @@ struct TodayLifeSaving: View {
                     
                 }
             }
+            .frame(maxWidth: .infinity)
             .foregroundStyle(Color.green02)
             .padding(.horizontal, 20)
             .padding(.top, 15)
@@ -46,9 +47,9 @@ struct TodayLifeSaving: View {
             .background(
                 RoundedRectangle(cornerRadius: 20)
                     .fill(Color.green03)
-                    .frame(maxWidth: .infinity)
             )
-        })    }
+        })
+    }
 }
 
 #Preview {
