@@ -13,30 +13,46 @@ struct RecentHistoryModel: Identifiable {
     let lifeSpanChange: Int
 }
 
+struct TodaySummaryModel: Identifiable {
+    let id = UUID()
+    let date: String
+    let lifeSaving: String
+}
+
 struct HomeView: View {
     // 더미 데이터
     let recentHistories: [RecentHistoryModel] = [
-        RecentHistoryModel(stepCount: 12457, startTime: 22, lifeSpanChange: -30),
-        RecentHistoryModel(stepCount: 9432, startTime: 20, lifeSpanChange: +12),
-        RecentHistoryModel(stepCount: 5689, startTime: 21, lifeSpanChange: +8),
-        RecentHistoryModel(stepCount: 246, startTime: 19, lifeSpanChange: -2),
-        RecentHistoryModel(stepCount: 15124, startTime: 23, lifeSpanChange: +30)
+        RecentHistoryModel(stepCount: 10, startTime: 22, lifeSpanChange: -10),
+        RecentHistoryModel(stepCount: 9432, startTime: 21, lifeSpanChange: +12),
+        RecentHistoryModel(stepCount: 5689, startTime: 20, lifeSpanChange: +8),
+        RecentHistoryModel(stepCount: 246, startTime: 19, lifeSpanChange: -10),
+        RecentHistoryModel(stepCount: 15124, startTime: 18, lifeSpanChange: +30)
     ]
+    
+    let todaySummaryData: TodaySummaryModel = TodaySummaryModel(date: "2025.07.16", lifeSaving: "1시간 27분")
     
     var body: some View {
         ScrollView {
-            VStack {
-                RecentHistory
+            VStack (spacing: 30) {
+                todaySummary
+                recentHistory
             }
         }
         .safeAreaPadding(.horizontal, 24)
     }
     
-    private var RecentHistory: some View {
+    private var todaySummary: some View {
+        VStack(spacing: 10) {
+            TodayLifeSaving(date: todaySummaryData.date, lifeSaving: todaySummaryData.lifeSaving)
+        }
+    }
+    
+    private var recentHistory: some View {
         VStack (alignment: .leading, spacing: 15) {
             Text("최근 내역")
                 .font(.headlineBold24)
                 .foregroundStyle(Color.black01)
+                .padding(.horizontal, 5)
             
             LazyVStack {
                 ForEach(recentHistories) { item in
