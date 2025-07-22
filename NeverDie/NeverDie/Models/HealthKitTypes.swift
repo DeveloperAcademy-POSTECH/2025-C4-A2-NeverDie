@@ -96,7 +96,6 @@ struct DailyHealthSummary {
     let distanceWalkingRunning: Double
     
     var completionPercentage: Double {
-        // 목표 대비 달성률 계산 (예시 목표값 사용)
         let stepGoal: Double = 10000
         let energyGoal: Double = 500
         let sleepGoal: Double = 8
