@@ -12,23 +12,11 @@ import HealthKit
 
 enum HealthDataType: String, CaseIterable {
     case stepCount = "step_count"
-    case activeEnergyBurned = "active_energy_burned"
-    case heartRate = "heart_rate"
-    case sleepHours = "sleep_hours"
-    case distanceWalkingRunning = "distance_walking_running"
     
     var displayName: String {
         switch self {
         case .stepCount:
             return "걸음수"
-        case .activeEnergyBurned:
-            return "활성 칼로리"
-        case .heartRate:
-            return "심박수"
-        case .sleepHours:
-            return "수면시간"
-        case .distanceWalkingRunning:
-            return "걷기/달리기 거리"
         }
     }
     
@@ -36,14 +24,6 @@ enum HealthDataType: String, CaseIterable {
         switch self {
         case .stepCount:
             return "걸음"
-        case .activeEnergyBurned:
-            return "kcal"
-        case .heartRate:
-            return "bpm"
-        case .sleepHours:
-            return "시간"
-        case .distanceWalkingRunning:
-            return "km"
         }
     }
     
@@ -51,14 +31,6 @@ enum HealthDataType: String, CaseIterable {
         switch self {
         case .stepCount:
             return "figure.walk"
-        case .activeEnergyBurned:
-            return "flame.fill"
-        case .heartRate:
-            return "heart.fill"
-        case .sleepHours:
-            return "bed.double.fill"
-        case .distanceWalkingRunning:
-            return "location.fill"
         }
     }
 }
@@ -75,14 +47,6 @@ struct HealthDataPoint {
         switch type {
         case .stepCount:
             return String(format: "%.0f", value)
-        case .activeEnergyBurned:
-            return String(format: "%.1f", value)
-        case .heartRate:
-            return String(format: "%.0f", value)
-        case .sleepHours:
-            return String(format: "%.1f", value)
-        case .distanceWalkingRunning:
-            return String(format: "%.2f", value / 1000) // 미터를 킬로미터로 변환
         }
     }
 }
@@ -90,21 +54,10 @@ struct HealthDataPoint {
 struct DailyHealthSummary {
     let date: Date
     let stepCount: Double
-    let activeEnergyBurned: Double
-    let heartRate: Double?
-    let sleepHours: Double
-    let distanceWalkingRunning: Double
     
-    var completionPercentage: Double {
+    var goalProgress: Double {
         let stepGoal: Double = 10000
-        let energyGoal: Double = 500
-        let sleepGoal: Double = 8
-        
-        let stepProgress = min(stepCount / stepGoal, 1.0)
-        let energyProgress = min(activeEnergyBurned / energyGoal, 1.0)
-        let sleepProgress = min(sleepHours / sleepGoal, 1.0)
-        
-        return (stepProgress + energyProgress + sleepProgress) / 3.0
+        return min(stepCount / stepGoal, 1.0)
     }
 }
 
@@ -117,18 +70,8 @@ struct WeeklyHealthSummary {
         return total / Double(dailySummaries.count)
     }
     
-    var averageActiveEnergy: Double {
-        let total = dailySummaries.reduce(0) { $0 + $1.activeEnergyBurned }
-        return total / Double(dailySummaries.count)
-    }
-    
-    var averageSleepHours: Double {
-        let total = dailySummaries.reduce(0) { $0 + $1.sleepHours }
-        return total / Double(dailySummaries.count)
-    }
-    
-    var totalDistance: Double {
-        return dailySummaries.reduce(0) { $0 + $1.distanceWalkingRunning }
+    var totalStepCount: Double {
+        return dailySummaries.reduce(0) { $0 + $1.stepCount }
     }
 }
 
@@ -183,25 +126,11 @@ enum HealthKitError: Error, LocalizedError {
 
 struct HealthGoals {
     var stepCount: Double = 10000
-    var activeEnergyBurned: Double = 500
-    var sleepHours: Double = 8
-    var distanceWalkingRunning: Double = 5000 // 미터
     
     func goalProgress(for type: HealthDataType, currentValue: Double) -> Double {
-        let goal: Double
         switch type {
         case .stepCount:
-            goal = stepCount
-        case .activeEnergyBurned:
-            goal = activeEnergyBurned
-        case .sleepHours:
-            goal = sleepHours
-        case .distanceWalkingRunning:
-            goal = distanceWalkingRunning
-        case .heartRate:
-            return 1.0 // 심박수는 목표가 없으므로 100% 반환
+            return min(currentValue / stepCount, 1.0)
         }
-        
-        return min(currentValue / goal, 1.0)
     }
 } 

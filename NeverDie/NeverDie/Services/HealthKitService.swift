@@ -15,17 +15,10 @@ class HealthKitService: ObservableObject {
     
     @Published var isAuthorized = false
     @Published var stepCount: Double = 0
-    @Published var activeEnergyBurned: Double = 0
-    @Published var heartRate: Double = 0
-    @Published var sleepHours: Double = 0
     
     // HealthKit에서 읽을 데이터 타입들
     private let readTypes: Set<HKObjectType> = [
-        HKObjectType.quantityType(forIdentifier: .stepCount)!,
-        HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-        HKObjectType.quantityType(forIdentifier: .heartRate)!,
-        HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
-        HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!
+        HKObjectType.quantityType(forIdentifier: .stepCount)!
     ]
     
     init() {
@@ -58,12 +51,7 @@ class HealthKitService: ObservableObject {
     // MARK: - 데이터 가져오기
     
     func fetchTodayHealthData() async {
-        await withTaskGroup(of: Void.self) { group in
-            group.addTask { await self.fetchStepCount() }
-            group.addTask { await self.fetchActiveEnergyBurned() }
-            group.addTask { await self.fetchLatestHeartRate() }
-            group.addTask { await self.fetchSleepData() }
-        }
+        await fetchStepCount()
     }
     
     // 걸음수 가져오기
@@ -90,83 +78,7 @@ class HealthKitService: ObservableObject {
         healthStore.execute(query)
     }
     
-    // 활성 에너지 소모량 가져오기
-    private func fetchActiveEnergyBurned() async {
-        guard let energyType = HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned) else { return }
-        
-        let predicate = createTodayPredicate()
-        let query = HKStatisticsQuery(
-            quantityType: energyType,
-            quantitySamplePredicate: predicate,
-            options: .cumulativeSum
-        ) { [weak self] _, result, error in
-            guard let self = self, let result = result, error == nil else {
-                print("활성 에너지 조회 실패: \(error?.localizedDescription ?? "알 수 없는 오류")")
-                return
-            }
-            
-            Task { @MainActor in
-                let energy = result.sumQuantity()?.doubleValue(for: HKUnit.kilocalorie()) ?? 0
-                self.activeEnergyBurned = energy
-            }
-        }
-        
-        healthStore.execute(query)
-    }
-    
-    // 최신 심박수 가져오기
-    private func fetchLatestHeartRate() async {
-        guard let heartRateType = HKQuantityType.quantityType(forIdentifier: .heartRate) else { return }
-        
-        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
-        let query = HKSampleQuery(
-            sampleType: heartRateType,
-            predicate: nil,
-            limit: 1,
-            sortDescriptors: [sortDescriptor]
-        ) { [weak self] _, samples, error in
-            guard let self = self, let samples = samples as? [HKQuantitySample], let latestSample = samples.first, error == nil else {
-                print("심박수 조회 실패: \(error?.localizedDescription ?? "알 수 없는 오류")")
-                return
-            }
-            
-            Task { @MainActor in
-                let heartRate = latestSample.quantity.doubleValue(for: HKUnit(from: "count/min"))
-                self.heartRate = heartRate
-            }
-        }
-        
-        healthStore.execute(query)
-    }
-    
-    // 수면 데이터 가져오기 (오늘)
-    private func fetchSleepData() async {
-        guard let sleepType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis) else { return }
-        
-        let predicate = createTodayPredicate()
-        let query = HKSampleQuery(
-            sampleType: sleepType,
-            predicate: predicate,
-            limit: HKObjectQueryNoLimit,
-            sortDescriptors: nil
-        ) { [weak self] _, samples, error in
-            guard let self = self, let samples = samples as? [HKCategorySample], error == nil else {
-                print("수면 데이터 조회 실패: \(error?.localizedDescription ?? "알 수 없는 오류")")
-                return
-            }
-            
-            Task { @MainActor in
-                let totalSleepTime = samples.reduce(0.0) { total, sample in
-                    let duration = sample.endDate.timeIntervalSince(sample.startDate)
-                    return total + duration
-                }
-                
-                self.sleepHours = totalSleepTime / 3600 // 초를 시간으로 변환
-            }
-        }
-        
-        healthStore.execute(query)
-    }
+
     
     // MARK: - Helper Methods
     
@@ -188,10 +100,6 @@ class HealthKitService: ObservableObject {
     
     func fetchWeeklyStepCount() async -> [Double] {
         return await fetchWeeklyData(for: .stepCount, unit: HKUnit.count())
-    }
-    
-    func fetchWeeklyActiveEnergy() async -> [Double] {
-        return await fetchWeeklyData(for: .activeEnergyBurned, unit: HKUnit.kilocalorie())
     }
     
     private func fetchWeeklyData(for identifier: HKQuantityTypeIdentifier, unit: HKUnit) async -> [Double] {
