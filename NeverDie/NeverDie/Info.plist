@@ -6,5 +6,7 @@
 	<array>
 		<string>PretendardVariable.ttf</string>
 	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>NeverDie 앱에서 걸음 수 데이터를 읽어와 수명 계산에 활용하기 위해 HealthKit 접근이 필요합니다.</string>
 </dict>
 </plist>
