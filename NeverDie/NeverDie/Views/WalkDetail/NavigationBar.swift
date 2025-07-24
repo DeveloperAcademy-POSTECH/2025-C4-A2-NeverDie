@@ -27,7 +27,7 @@ struct NavigationBar: View {
                     .font(.navLabelRegular17)
                 }
                 
-//                Spacer()
+
                 
                 // 중앙 타이틀(네비게이션 커스텀 해서 텍스트로)
                 Text("걸음수 상세")
@@ -37,8 +37,6 @@ struct NavigationBar: View {
                     .padding(.leading, 38)
                 
                 
-                
-                //                Spacer()
                 
                 
                 Button(action: {

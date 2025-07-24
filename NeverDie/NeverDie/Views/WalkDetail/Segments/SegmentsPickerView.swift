@@ -1,22 +1,16 @@
 //
-//  SegmentsContainerView.swift
+//  SegmentsPicker.swift
 //  NeverDie
 //
-//  Created by 이혜빈 on 7/21/25.
+//  Created by 이혜빈 on 7/23/25.
 //
 
 import SwiftUI
 
-struct SegmentsContainerView: View {
+struct SegmentsPickerView: View {
+    @State private var selectedSegment: SegmentsModel = .day // 기본 세팅 값
     
-    @State private var selectedSegment: SegmentsModel = .day
-
     var body: some View {
-        VStack(spacing: 0) {
-            // MARK: 네비게이션 바, 데이터 추가 버튼
-            NavigationBar()
-        }
-        
         VStack(spacing: 20) {
             // 세그먼트 피커
             Picker("기간 선택", selection: $selectedSegment) {
@@ -51,5 +45,5 @@ struct SegmentsContainerView: View {
 }
 
 #Preview {
-    SegmentsContainerView()
+    SegmentsPickerView()
 }
