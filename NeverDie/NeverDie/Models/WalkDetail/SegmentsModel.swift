@@ -15,23 +15,28 @@ enum SegmentsModel: String, CaseIterable, Identifiable {
     case year = "1년"
     case all = "전체"
     
-    // MARK: Identifiable 프로토콜 준수를 위한 ID
     var id: String { self.rawValue }
     
-    // MARK: 각 세그먼트에 적용 시킬 문구
-    var prefixText: String {
+    // ✅ 세그먼트에 맞는 더미 StepData 리턴
+    func sampleStepData() -> [StepData] {
         switch self {
-        case .day: return "오늘"
-        case .week: return "이번 주"
-        case .month: return "이번 달"
-        case .halfYear: return "최근 6개월간"
-        case .year: return "올해"
-        case .all: return "전체 기간 동안"
+        case .day:
+            return (0..<24).map { StepData(hour: $0, stepCount: Int.random(in: 500...2000)) }
+
+        case .week:
+            return (0..<7).map { StepData(hour: $0, stepCount: Int.random(in: 3000...8000)) }
+
+        case .month:
+            return (0..<30).map { StepData(hour: $0, stepCount: Int.random(in: 2000...10000)) }
+
+        case .halfYear:
+            return (0..<26).map { StepData(hour: $0, stepCount: Int.random(in: 5000...15000)) }
+
+        case .year:
+            return (0..<12).map { StepData(hour: $0, stepCount: Int.random(in: 7000...20000)) }
+
+        case .all:
+            return (0..<5).map { StepData(hour: $0, stepCount: Int.random(in: 10000...30000)) }
         }
-    }
-    
-    // MARK: 공통 문구와 결합된 전체 문장
-    var FeedbackText: String {
-        return "\(prefixText) 저축한 수명이에요."
     }
 }

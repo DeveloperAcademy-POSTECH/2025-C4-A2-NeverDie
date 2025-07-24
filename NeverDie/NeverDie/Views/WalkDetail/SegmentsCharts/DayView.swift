@@ -9,12 +9,14 @@ import SwiftUI
 import Charts
 
 struct DayView: View {
-    let segment: SegmentsModel = .day
-    
     var body: some View {
-        Text(segment.FeedbackText)
+        StepChartsView(
+            data: SegmentsModel.day.sampleStepData(),
+            title: "1일 걸음수 & 저축 수명"
+        )
     }
 }
+
 
 #Preview {
     DayView()

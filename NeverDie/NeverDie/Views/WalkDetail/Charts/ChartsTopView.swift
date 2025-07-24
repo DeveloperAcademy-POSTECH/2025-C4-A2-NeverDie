@@ -9,17 +9,16 @@ import SwiftUI
 import Charts
 
 struct ChartsTopView: View {
-    @StateObject private var viewModel = StepChartViewModel()
+    @StateObject private var viewModel = StepChartsViewModel()
     
     var body: some View {
         topView
     }
     
-    // MARK: 상단: 총 걸음 수 / 수명 ViewBuilder 함수로 변환
     private var topView: some View {
         VStack(alignment: .leading, spacing: 10) {
-            
-            HStack() {
+            HStack(spacing: 70) {
+                
                 // 걸음수
                 VStack(alignment: .leading, spacing: 10) {
                     HStack {
@@ -36,8 +35,6 @@ struct ChartsTopView: View {
                         .font(.calloutSemiBold14)
                         .foregroundStyle(.grayCaption02)
                 }
-                
-                Spacer()
                 
                 // 수명
                 VStack(alignment: .leading, spacing: 10) {
@@ -56,20 +53,18 @@ struct ChartsTopView: View {
                         .foregroundStyle(.grayCaption02)
                 }
                 
+                Spacer()
             }
-            
             // 오늘 날짜
             Text(formattedDate(viewModel.currentDate))
                 .font(.captionSemiBold12)
                 .foregroundColor(.grayCaption03)
-            
-            
         }
+        .padding()
     }
 }
 
-
-// 오늘 날짜 계산
+// 날짜 포맷 함수
 private func formattedDate(_ date: Date) -> String {
     let formatter = DateFormatter()
     formatter.locale = Locale(identifier: "ko_KR")
