@@ -5,23 +5,23 @@
 //  Created by 이혜빈 on 7/21/25.
 //
 
-//import SwiftUI
-//import Charts
-//
-//struct WeekView: View {
-//
-//    
-//    var body: some View {
-//        VStack {
-//            StepChartView()
-//            
-//        }
-//
-//        
-//        
-//    }
-//}
-//
-//#Preview {
-//    WeekView()
-//}
+import SwiftUI
+import Charts
+
+struct WeekView: View {
+
+    
+    var body: some View {
+        VStack {
+            Text("WeekView")
+            
+        }
+
+        
+        
+    }
+}
+
+#Preview {
+    WeekView()
+}
