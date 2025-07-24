@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import Charts
 
 struct AllView: View {
     var body: some View {
-        Text("AllView")
+        StepChartsView(
+            data: SegmentsModel.all.sampleStepData(),
+            title: "전체 걸음수 & 저축 수명"
+        )
     }
 }
 

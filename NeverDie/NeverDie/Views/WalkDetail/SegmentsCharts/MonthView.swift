@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Charts
 
 struct MonthView: View {
     var body: some View {
-        Text("MonthView")
+        StepChartsView(
+            data: SegmentsModel.month.sampleStepData(),
+            title: "1개월 걸음수 & 저축 수명"
+        )
     }
 }
-
 #Preview {
     MonthView()
 }

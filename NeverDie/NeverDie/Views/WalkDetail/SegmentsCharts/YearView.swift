@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import Charts
 
 struct YearView: View {
     var body: some View {
-        Text("YearView")
+        StepChartsView(
+            data: SegmentsModel.year.sampleStepData(),
+            title: "1년 걸음수 & 저축 수명"
+        )
     }
 }
-
 #Preview {
     YearView()
 }

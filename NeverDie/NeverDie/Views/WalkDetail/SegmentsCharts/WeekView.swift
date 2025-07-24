@@ -8,17 +8,13 @@
 import SwiftUI
 import Charts
 
+
 struct WeekView: View {
-
-    
     var body: some View {
-        VStack {
-            Text("WeekView")
-            
-        }
-
-        
-        
+        StepChartsView(
+            data: SegmentsModel.week.sampleStepData(),
+            title: "1주일 걸음수 & 저축 수명"
+        )
     }
 }
 

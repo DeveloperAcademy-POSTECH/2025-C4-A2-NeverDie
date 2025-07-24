@@ -8,28 +8,18 @@
 import SwiftUI
 import Charts
 
-struct StepChartView: View {
+struct StepChartsView: View {
     
     let data: [StepData]        // 외부에서 받은 데이터
     let title: String           // 외부에서 받은 제목
     
     // 뷰모델을 상태 객체로 선언해서 뷰에서 관찰
-    @StateObject private var viewModel = StepChartViewModel()
+    @StateObject private var viewModel = StepChartsViewModel()
     
-    var body: some View {
-        VStack {
-            // 1. 기간 선택 세그먼트 (Picker)
-            Picker("기간", selection: $viewModel.selectedSegment) {
-                ForEach(SegmentsModel.allCases) { segment in
-                    Text(segment.rawValue) // 세그먼트 이름 표시 (예: "1일", "1주")
-                        .tag(segment)       // 태그로 선택 값 바인딩
-                }
-            }
-            .pickerStyle(.segmented) // 세그먼트 스타일 적용
-            .padding()
-            
-            // 2. 차트 영역
+    var body: some View {      
+            // 차트 영역
             Chart {
+                
                 // 데이터 배열을 반복하며 각 데이터 포인트를 그리기
                 ForEach(viewModel.hourlyStepData) { data in
                     // BarMark: x축은 시간/일/월, y축은 걸음 수
@@ -37,14 +27,14 @@ struct StepChartView: View {
                         x: .value("시간", data.hour),
                         y: .value("걸음 수", data.stepCount)
                     )
-                    .foregroundStyle(Color.blue.opacity(0.7)) // 반투명 파란색 막대
+                    .foregroundStyle(.greenChart02)
                     
                     // LineMark: x축은 시간/일/월, y축은 저축된 수명(분)
                     LineMark(
                         x: .value("시간", data.hour),
                         y: .value("저축된 수명(분)", data.savedMinutes)
                     )
-                    .foregroundStyle(Color.red) // 빨간색 꺾은선
+                    .foregroundStyle(.blue01) // 파란색 꺾은선
                     .lineStyle(StrokeStyle(lineWidth: 2, dash: [5])) // 점선 스타일
                     .symbol(Circle())         // 각 점을 원으로 표시
                     .symbolSize(30)           // 점 크기 설정
@@ -52,6 +42,6 @@ struct StepChartView: View {
             }
             .frame(height: 300) // 차트 높이 지정
             .padding()
-        }
+        
     }
 }

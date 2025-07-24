@@ -10,7 +10,7 @@ import Charts
 
 struct DayView: View {
     var body: some View {
-        StepChartView(
+        StepChartsView(
             data: SegmentsModel.day.sampleStepData(),
             title: "1일 걸음수 & 저축 수명"
         )
