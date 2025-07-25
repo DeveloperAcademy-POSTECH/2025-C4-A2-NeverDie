@@ -15,6 +15,7 @@ struct NeverDieApp: App {
             Item.self,
             UserProfile.self,
             WalkingSession.self,
+            LifeSpan.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
