@@ -27,25 +27,19 @@ struct NavigationBar: View {
                     .font(.navLabelRegular17)
                 }
                 
+                Spacer()
 
                 
                 // 중앙 타이틀(네비게이션 커스텀 해서 텍스트로)
                 Text("걸음수 상세")
                     .font(.navLabelSemiBold17)
                     .foregroundStyle(.black01)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.leading, 38)
+                    .border(.red)
+                    .padding(.trailing, 38)
                 
+                Spacer()
+
                 
-                
-                
-                Button(action: {
-                    // 버튼 액션
-                }) {
-                    Text("데이터추가")
-                        .foregroundStyle(.greenChart02)
-                        .font(.navLabelSemiBold17)
-                }
             }
         }
         .safeAreaPadding(.horizontal, 16)
