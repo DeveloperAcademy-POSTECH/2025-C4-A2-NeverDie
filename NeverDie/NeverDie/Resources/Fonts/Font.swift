@@ -35,10 +35,92 @@ extension Font {
         }
     }
     
+    enum Suit {
+        case heavy
+        
+        var value: String {
+            switch self {
+            case .heavy:
+                return "SUIT-Heavy"
+            }
+        }
+    }
+    
+    enum SfPro {
+        case bold
+        case regular
+        
+        var weight: Font.Weight {
+            switch self {
+            case .bold: return .bold
+            case .regular: return .regular
+            }
+        }
+    }
+    
     static func pretendard(type: Pretendard, size: CGFloat) -> Font {
         return .custom(type.value, size: size)
     }
     
+    static func suit(type: Suit, size: CGFloat) -> Font {
+        return .custom(type.value, size: size)
+    }
+    
+    static func sfPro(type: SfPro, size: CGFloat) -> Font {
+        return .system(size: size, weight: type.weight)
+    }
+    
+    // MARK: - NEW FONT
+    
+    static var b24: Font {
+        return .pretendard(type: .bold, size: 24)
+    }
+    
+    static var b20: Font {
+        return .pretendard(type: .bold, size: 20)
+    }
+    
+    static var sb16: Font {
+        return .pretendard(type: .semiBold, size: 16)
+    }
+    
+    static var sb14: Font {
+        return .pretendard(type: .semiBold, size: 14)
+    }
+    
+    static var r10: Font {
+        return .pretendard(type: .regular, size: 10)
+    }
+    
+    static var m16: Font {
+        return .pretendard(type: .medium, size: 16)
+    }
+    
+    static var m12: Font {
+        return .pretendard(type: .medium, size: 12)
+    }
+    
+    static var suitH40: Font {
+        return .suit(type: .heavy, size: 40)
+    }
+    
+    static var sfB32: Font {
+        return .sfPro(type: .bold, size: 32)
+    }
+    
+    static var sfR16: Font {
+        return .sfPro(type: .regular, size: 16)
+    }
+    
+    
+    
+    
+    
+    
+    
+    /// 하단 폰트는 Expired
+    /// 기존에 사용하던 폰트로, 이제는 쓰지 않음
+    /// 추후 제거 예정
     // MARK: - Bold
     static var largeTitleBold40: Font {
         return .pretendard(type: .bold, size: 40)
