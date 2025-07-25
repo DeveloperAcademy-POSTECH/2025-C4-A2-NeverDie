@@ -20,12 +20,14 @@ struct TodayStepCount: View {
             HStack(alignment: .bottom, spacing: 3) {
                 Text("\(stepCount)")
                     .font(.largeTitleSemiBold32)
+                    .figmaLineHeight(fontSize: 32)
+
                 
                 Text("걸음")
                     .font(.subheadlineMedium18)
                     .offset(y: -4)
+                    .figmaLineHeight(fontSize: 18)
             }
-            .figmaLineHeight(fontSize: 18)
         }
         .foregroundStyle(Color.green03)
         .padding(.horizontal, 20)

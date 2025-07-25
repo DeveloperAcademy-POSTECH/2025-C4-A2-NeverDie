@@ -79,6 +79,7 @@ struct HomeView: View {
                 .font(.headlineBold24)
                 .foregroundStyle(Color.black01)
                 .padding(.horizontal, 5)
+                .figmaLineHeight(fontSize: 24)
             
             LazyVStack {
                 ForEach(recentHistories) { item in
