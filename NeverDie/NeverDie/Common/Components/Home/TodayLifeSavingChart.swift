@@ -64,11 +64,18 @@ struct TodayLifeSavingChart: View {
         .foregroundStyle(Color.blue01)
         .frame(height: 170)
         .chartXAxis {
-            AxisMarks(values: .stride(by: .hour, count: 3)) {
+            AxisMarks(values: .stride(by: .hour, count: 3)) { value in
                 AxisTick()
                 AxisGridLine()
+                AxisValueLabel() {
+                    if let date = value.as(Date.self) {
+                        let hour = Calendar.current.component(.hour, from: date)
+                        Text("\(hour)시")
+                    }
+                }
             }
         }
+
     }
 }
 
