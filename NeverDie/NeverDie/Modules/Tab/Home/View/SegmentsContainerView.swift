@@ -21,7 +21,6 @@ struct SegmentsContainerView: View {
             
             ChartsTopView(selectedSegment: $selectedSegment)
 
-            
         
         }
             
