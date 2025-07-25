@@ -2,56 +2,42 @@
 //  TodayLifeSaving.swift
 //  NeverDie
 //
-//  Created by 길정수 on 7/21/25.
+//  Created by 길정수 on 7/25/25.
 //
 
 import SwiftUI
 
 struct TodayLifeSaving: View {
-    let date: String
-    let lifeSaving: String
+    let lifeSaving: timeData
     
     var body: some View {
-        Button(action: {
-            print("오늘의 수명 저축량 클릭")
-        }, label: {
-            VStack(spacing: 10) {
-                HStack {
-                    Text("\(date)")
-                    
-                    Spacer()
-                    
-                    Text("상세보기")
-                }
-                .font(.captionRegular13)
+        VStack(alignment: .leading, spacing: 4) {
+            HStack(alignment: .center) {
+                Text("오늘의 저축 수명")
+                    .font(.sb16)
+                    .foregroundStyle(Color.grayCaption03)
+                    .figmaLineHeight(fontSize: 16)
                 
-                HStack {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("오늘의")
-                        Text("수명 저축량")
-                    }
-                    .font(.calloutBold16)
-                    
-                    Spacer()
-                    
-                    Text("\(lifeSaving)")
-                        .font(.largeTitleBold40)
-                    
-                }
+                Spacer()
+                
+                Text("상세보기")
+                    .font(.m12)
+                    .foregroundStyle(Color.grayCaption02)
+                    .figmaLineHeight(fontSize: 12)
             }
-            .frame(maxWidth: .infinity)
-            .foregroundStyle(Color.green02)
-            .padding(.horizontal, 20)
-            .padding(.top, 15)
-            .padding(.bottom, 9)
-            .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(Color.green03)
+            
+            Text(
+                [
+                    lifeSaving.day.map { "\($0)일" },
+                    lifeSaving.hour.map { "\($0)시간" },
+                    "\(lifeSaving.minute)분" // minute는 필수니까 무조건 표시
+                ]
+                    .compactMap { $0 } // nil인 항목은 제거
+                    .joined(separator: " ")
             )
-        })
+            .font(.suitH40)
+            .foregroundStyle(Color.black01)
+            .figmaLineHeight(fontSize: 40)
+        }
     }
-}
-
-#Preview {
-    TodayLifeSaving(date: "2025.07.16", lifeSaving: "1시간 27분")
 }
