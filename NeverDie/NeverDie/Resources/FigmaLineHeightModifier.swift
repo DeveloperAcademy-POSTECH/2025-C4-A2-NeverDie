@@ -9,20 +9,23 @@ import SwiftUI
 
 struct FigmaLineHeightModifier: ViewModifier {
     let fontSize: CGFloat
-    var lineHeight: CGFloat { fontSize * 1.3 }
+    let figmaLineHeight: CGFloat
+
+    var font: UIFont { .systemFont(ofSize: fontSize) }
+    var swiftUILineHeight: CGFloat { font.lineHeight }
+    var lineSpacing: CGFloat { max(figmaLineHeight - swiftUILineHeight, 0) }
+    var verticalPadding: CGFloat { max((figmaLineHeight - swiftUILineHeight) / 2, 0) }
 
     func body(content: Content) -> some View {
-        let extraSpace = lineHeight - fontSize
-        let verticalPadding = max(extraSpace / 2, 0)
-        return content
+        content
             .font(.system(size: fontSize))
+            .lineSpacing(lineSpacing)
             .padding(.vertical, verticalPadding)
     }
 }
-
 extension View {
-    func figmaLineHeight(fontSize: CGFloat) -> some View {
-        self.modifier(FigmaLineHeightModifier(fontSize: fontSize))
+    func figmaLineHeight(fontSize: CGFloat, lineHeight: CGFloat? = nil) -> some View {
+        let lh = lineHeight ?? fontSize * 1.3
+        return self.modifier(FigmaLineHeightModifier(fontSize: fontSize, figmaLineHeight: lh))
     }
 }
-
