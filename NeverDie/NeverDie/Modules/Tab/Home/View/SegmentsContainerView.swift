@@ -19,8 +19,8 @@ struct SegmentsContainerView: View {
             
             SegmentsPickerView(selectedSegment: $selectedSegment)
             
-            ChartsTopView()
-            
+            ChartsTopView(selectedSegment: $selectedSegment)
+
             
         
         }

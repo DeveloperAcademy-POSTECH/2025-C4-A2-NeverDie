@@ -9,6 +9,7 @@ import SwiftUI
 import Charts
 
 struct ChartsTopView: View {
+    @Binding var selectedSegment: SegmentsModel
     @StateObject private var viewModel = StepChartsViewModel()
     
     var body: some View {
@@ -25,7 +26,7 @@ struct ChartsTopView: View {
                         Circle()
                             .fill(Color.greenChart02)
                             .frame(width: 10, height: 10)
-                        Text("걸음수")
+                        Text(selectedSegment.stepTitle)
                             .font(.captionSemiBold12)
                             .foregroundStyle(.grayCaption02)
                     }
@@ -42,7 +43,7 @@ struct ChartsTopView: View {
                         Circle()
                             .fill(Color.blue)
                             .frame(width: 10, height: 10)
-                        Text("저축된 수명")
+                        Text(selectedSegment.lifespanTitle)
                             .font(.captionSemiBold12)
                             .foregroundStyle(.grayCaption02)
                     }
@@ -64,6 +65,7 @@ struct ChartsTopView: View {
     }
 }
 
+
 // 날짜 포맷 함수
 private func formattedDate(_ date: Date) -> String {
     let formatter = DateFormatter()
@@ -72,6 +74,3 @@ private func formattedDate(_ date: Date) -> String {
     return formatter.string(from: date)
 }
 
-#Preview {
-    ChartsTopView()
-}
