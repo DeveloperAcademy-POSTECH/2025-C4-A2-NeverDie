@@ -88,6 +88,14 @@ extension Font {
         return .pretendard(type: .semiBold, size: 14)
     }
     
+    static var r16: Font {
+        return .pretendard(type: .regular, size: 16)
+    }
+    
+    static var r14: Font {
+        return .pretendard(type: .regular, size: 14)
+    }
+    
     static var r10: Font {
         return .pretendard(type: .regular, size: 10)
     }
