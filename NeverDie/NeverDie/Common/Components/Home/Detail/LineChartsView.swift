@@ -24,7 +24,7 @@ struct LineChartsView: View {
                 .symbolSize(30)
             }
         }
-        .frame(height: 300)
+        .frame(width: 320, height: 200)
         .padding()
     }
 }

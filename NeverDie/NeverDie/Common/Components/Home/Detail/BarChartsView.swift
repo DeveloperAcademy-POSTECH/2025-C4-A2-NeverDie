@@ -21,7 +21,7 @@ struct BarChartsView: View {
                 .foregroundStyle(.greenChart02)
             }
         }
-        .frame(height: 300)
+        .frame(width: 354, height: 200)
         .padding()
     }
 }

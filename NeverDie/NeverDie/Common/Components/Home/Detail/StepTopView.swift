@@ -8,7 +8,7 @@
 import SwiftUI
 import Charts
 
-struct ChartsTopView: View {
+struct StepTopView: View {
     // 상위 뷰에서 선택된 세그먼트 값을 바인딩으로 받음
     @Binding var selectedSegment: SegmentsModel
     
@@ -17,20 +17,8 @@ struct ChartsTopView: View {
     
     var body: some View {
         
-        StepChartsView(data: viewModel.hourlyStepData, title: selectedSegment.rawValue)
-            .onAppear {
-                viewModel.selectedSegment = selectedSegment
-            }
-            .onChange(of: selectedSegment) { newValue in
-                viewModel.selectedSegment = newValue
-            }
-        
         topView
         // selectedSegment가 변경될 때 뷰모델의 selectedSegment에 값 전달
-            .onChange(of: selectedSegment) { newValue in
-                viewModel.selectedSegment = newValue
-            }
-        bottomView
             .onChange(of: selectedSegment) { newValue in
                 viewModel.selectedSegment = newValue
             }
@@ -39,16 +27,16 @@ struct ChartsTopView: View {
     
     // 실제 UI 구성 뷰
     private var topView: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack(spacing: 70) {
+        VStack(alignment: .leading, spacing: 6) { // 걸음수와 날짜 사이
+            HStack() {
                 
                 // 걸음수 정보 표시 영역
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 2) { // 총 걸음수와 걸음수 사이
                     HStack {
                         // 초록색 점 표시
                         Circle()
                             .fill(Color.greenChart02)
-                            .frame(width: 10, height: 10)
+                            .frame(width: 8, height: 8)
                         
                         // 선택된 세그먼트에 따라 걸음수 제목 표시 (예: "오늘 걸음수")
                         Text(selectedSegment.stepTitle)
@@ -56,7 +44,7 @@ struct ChartsTopView: View {
                             .foregroundStyle(.grayCaption02)
                     }
                     // 걸음수 숫자와 단위를 한 줄에 배치
-                    HStack(alignment: .firstTextBaseline, spacing: 0) {
+                    HStack(alignment: .firstTextBaseline) {
                         // 걸음수 숫자, 큰 폰트
                         Text("\(viewModel.totalSteps.formatted())")
                             .font(.largeTitleSemiBold32)
@@ -72,34 +60,6 @@ struct ChartsTopView: View {
             Text(formattedDate(viewModel.currentDate))
                 .font(.captionSemiBold12)
                 .foregroundColor(.grayCaption03)
-        }
-        .padding() // 전체 여백
-    }
-    
-    private var bottomView: some View {
-        // 수명(저축된 시간) 정보 표시 영역
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                // 파란색 점 표시
-                Circle()
-                    .fill(Color.blue)
-                    .frame(width: 10, height: 10)
-                
-                // 선택된 세그먼트에 따른 수명 제목 표시 (예: "절약된 시간")
-                Text(selectedSegment.lifespanTitle)
-                    .font(.captionSemiBold12)
-                    .foregroundStyle(.grayCaption02)
-            }
-            // 수명 숫자와 단위를 한 줄에 배치
-            HStack(alignment: .firstTextBaseline, spacing: 0) {
-                // 수명(분) 숫자, 큰 폰트
-                Text("\(Int(viewModel.totalSavedMinutes))")
-                    .font(.largeTitleSemiBold32)
-                // 단위 "분", 작은 폰트에 회색 스타일
-                Text(" 분")
-                    .font(.calloutSemiBold14)
-                    .foregroundStyle(.grayCaption02)
-            }
         }
     }
 }

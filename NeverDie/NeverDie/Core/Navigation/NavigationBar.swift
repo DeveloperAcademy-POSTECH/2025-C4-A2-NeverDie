@@ -11,7 +11,6 @@ struct NavigationBar: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        VStack {
             // MARK: 커스텀 네비게이션 바
             HStack {
                 // < 홈
@@ -23,8 +22,8 @@ struct NavigationBar: View {
                             .font(.system(size: 17, weight: .bold))
                         Text("홈")
                     }
-                    .foregroundStyle(.greenChart02)
-                    .font(.navLabelRegular17)
+                    .foregroundStyle(.blue01)
+                    .font(.m16)
                 }
                 
                 Spacer()
@@ -32,16 +31,14 @@ struct NavigationBar: View {
                 
                 // 중앙 타이틀(네비게이션 커스텀 해서 텍스트로)
                 Text("걸음수 상세")
-                    .font(.navLabelSemiBold17)
+                    .font(.sb16)
                     .foregroundStyle(.black01)
-                    .border(.red)
                     .padding(.trailing, 38)
                 
                 Spacer()
 
                 
             }
-        }
         .safeAreaPadding(.horizontal, 16)
         .navigationBarBackButtonHidden(true) // 시스템 백버튼 숨김
     }
