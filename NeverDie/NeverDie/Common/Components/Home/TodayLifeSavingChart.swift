@@ -12,7 +12,7 @@ import SwiftUI
 func date(year: Int, month: Int, day: Int = 1, hour: Int = 0) -> Date {
     Calendar.current.date(from: DateComponents(year: year, month: month, day: day, hour: hour)) ?? Date()
 }
-struct stepCountData {
+struct dummyChartData {
     static let last12Hours = [
         (hour: date(year: 2025, month: 7, day: 21, hour: 4), life: 38),
         (hour: date(year: 2025, month: 7, day: 21, hour: 5), life: 12),
@@ -24,14 +24,25 @@ struct stepCountData {
         (hour: date(year: 2025, month: 7, day: 21, hour: 11), life: 23),
         (hour: date(year: 2025, month: 7, day: 21, hour: 12), life: 36),
         (hour: date(year: 2025, month: 7, day: 21, hour: 13), life: 12),
-        (hour: date(year: 2025, month: 7, day: 21, hour: 14), life: 23)    ]
+        (hour: date(year: 2025, month: 7, day: 21, hour: 14), life: 23)
+    ]
+    
+    static let last7days = [
+        (day: date(year: 2025, month: 7, day: 20), stepCount: 24945),
+        (day: date(year: 2025, month: 7, day: 21), stepCount: 22438),
+        (day: date(year: 2025, month: 7, day: 22), stepCount: 18812),
+        (day: date(year: 2025, month: 7, day: 23), stepCount: 20033),
+        (day: date(year: 2025, month: 7, day: 24), stepCount: 8344),
+        (day: date(year: 2025, month: 7, day: 25), stepCount: 7434),
+        (day: date(year: 2025, month: 7, day: 26), stepCount: 10528)
+    ]
 }
 
 struct TodayLifeSavingChart: View {
     
     var body: some View {
         Chart {
-            ForEach(stepCountData.last12Hours, id: \.hour) { data in
+            ForEach(dummyChartData.last12Hours, id: \.hour) { data in
                 AreaMark(
                     x: .value("Hour", data.hour, unit: .hour),
                     y: .value("수명", data.life)
@@ -43,7 +54,7 @@ struct TodayLifeSavingChart: View {
                     )
                 )
             }
-            ForEach(stepCountData.last12Hours, id: \.hour) { data in
+            ForEach(dummyChartData.last12Hours, id: \.hour) { data in
                 LineMark(
                     x: .value("Hour", data.hour, unit: .hour),
                     y: .value("수명", data.life)

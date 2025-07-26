@@ -20,6 +20,7 @@ struct TodaySummaryModel: Identifiable {
 }
 
 struct HomeView: View {
+    @State private var showDialog = false
     
     let todaySummaryData = TodaySummaryModel(
         lifeSaving: timeData(day: nil, hour: 1, minute: 30)
@@ -27,7 +28,10 @@ struct HomeView: View {
     
     var body: some View {
         ScrollView {
-            topContents
+            VStack(spacing: 24) {
+                topContents
+                bottomContents
+            }
         }
         .background(Color.grayBg)
         .safeAreaPadding(.horizontal, 16)
@@ -49,7 +53,44 @@ struct HomeView: View {
             )
         }
     }
-
+    
+    private var bottomContents: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            bottomContentsTitle
+            
+            GoalStatus(sectionIcon: ImageResource.stepCountIcon, sectionTitle: "걸음수", goalStage: 3, currentStatus: 10521, goal: 13000, percent: 80)
+            
+        }
+    }
+    
+    private var bottomContentsTitle: some View {
+        HStack {
+            Text("목표 현황")
+                .font(.b24)
+                .foregroundStyle(Color.black01)
+                .figmaLineHeight(fontSize: 24)
+            
+            Spacer()
+            
+            Button(action: {
+                print("메뉴 버튼 클릭")
+                showDialog = true
+            }) {
+                Image(systemName: "ellipsis")
+                    .font(.sfR16)
+                    .foregroundStyle(Color.grayCaption02)
+                    .figmaLineHeight(fontSize: 16)
+            }
+            .confirmationDialog("",
+                        isPresented: $showDialog
+                    ) {
+                        Button("목표 설정") { print("목표 설정 클릭") }
+                        Button("목표 삭제", role: .destructive) { print("목표 삭제 클릭") }
+                    }
+            
+        }
+        .padding(.horizontal, 19)
+    }
 }
 
 #Preview {
