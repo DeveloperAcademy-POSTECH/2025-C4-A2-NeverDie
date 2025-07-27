@@ -22,24 +22,16 @@ struct LifeBottomView: View {
             .onChange(of: selectedSegment) { newValue in
                 viewModel.selectedSegment = newValue
             }
-        
-//        LineChartsView(data: viewModel.hourlyStepData)
-//            .onAppear {
-//                viewModel.selectedSegment = selectedSegment
-//            }
-//            .onChange(of: selectedSegment) { newValue in
-//                viewModel.selectedSegment = newValue
-//            }
     }
     
     private var bottomView: some View {
         // 수명(저축된 시간) 정보 표시 영역
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 2) {
             HStack {
                 // 파란색 점 표시
                 Circle()
                     .fill(Color.blue)
-                    .frame(width: 10, height: 10)
+                    .frame(width: 8, height: 8)
                 
                 // 선택된 세그먼트에 따른 수명 제목 표시 (예: "절약된 시간")
                 Text(selectedSegment.lifespanTitle)

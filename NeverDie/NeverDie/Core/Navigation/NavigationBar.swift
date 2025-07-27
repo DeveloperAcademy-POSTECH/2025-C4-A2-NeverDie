@@ -39,7 +39,6 @@ struct NavigationBar: View {
 
                 
             }
-        .safeAreaPadding(.horizontal, 16)
         .navigationBarBackButtonHidden(true) // 시스템 백버튼 숨김
     }
 }

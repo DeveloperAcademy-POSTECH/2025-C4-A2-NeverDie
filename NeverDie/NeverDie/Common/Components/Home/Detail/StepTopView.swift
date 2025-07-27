@@ -22,6 +22,7 @@ struct StepTopView: View {
             .onChange(of: selectedSegment) { newValue in
                 viewModel.selectedSegment = newValue
             }
+
         
     }
     
@@ -49,7 +50,7 @@ struct StepTopView: View {
                         Text("\(viewModel.totalSteps.formatted())")
                             .font(.largeTitleSemiBold32)
                         // 단위 "걸음", 작은 폰트에 회색 스타일
-                        Text(" 걸음")
+                        Text("걸음")
                             .font(.calloutSemiBold14)
                             .foregroundStyle(.grayCaption02)
                     }

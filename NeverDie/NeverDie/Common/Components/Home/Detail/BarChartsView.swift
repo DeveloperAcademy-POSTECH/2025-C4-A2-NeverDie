@@ -22,6 +22,5 @@ struct BarChartsView: View {
             }
         }
         .frame(width: 354, height: 200)
-        .padding()
     }
 }

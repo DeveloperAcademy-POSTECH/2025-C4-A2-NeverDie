@@ -19,13 +19,12 @@ struct LineChartsView: View {
                     y: .value("저축된 수명(분)", dataPoint.savedMinutes)
                 )
                 .foregroundStyle(.blue01)
-                .lineStyle(StrokeStyle(lineWidth: 2, dash: [5]))
+                .lineStyle(StrokeStyle(lineWidth: 2, lineJoin: .round))
                 .symbol(Circle())
-                .symbolSize(30)
+                .symbolSize(40)
             }
         }
         .frame(width: 320, height: 200)
-        .padding()
     }
 }
 
