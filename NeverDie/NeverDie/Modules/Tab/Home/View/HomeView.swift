@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Charts
+
 struct timeData: Identifiable {
     let id = UUID()
     let day: Int?
@@ -20,7 +20,7 @@ struct TodaySummaryModel: Identifiable {
 }
 
 struct HomeView: View {
-    @State private var showDialog = false
+    @State private var showAddGoalModalView = false
     
     let todaySummaryData = TodaySummaryModel(
         lifeSaving: timeData(day: nil, hour: 1, minute: 30)
@@ -73,20 +73,18 @@ struct HomeView: View {
             Spacer()
             
             Button(action: {
-                print("메뉴 버튼 클릭")
-                showDialog = true
+                showAddGoalModalView = true
             }) {
-                Image(systemName: "ellipsis")
+                Image(systemName: "plus")
                     .font(.sfR16)
                     .foregroundStyle(Color.grayCaption02)
                     .figmaLineHeight(fontSize: 16)
             }
-            .confirmationDialog("",
-                        isPresented: $showDialog
-                    ) {
-                        Button("목표 설정") { print("목표 설정 클릭") }
-                        Button("목표 삭제", role: .destructive) { print("목표 삭제 클릭") }
-                    }
+            .sheet(isPresented:$showAddGoalModalView) {
+                AddGoalModalView()
+                    .presentationDetents([.fraction(1)])
+                    .interactiveDismissDisabled(false)
+            }
             
         }
         .padding(.horizontal, 19)
@@ -95,4 +93,16 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+}
+
+struct HomeView_Preview: PreviewProvider {
+    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
+    
+    static var previews: some View {
+        ForEach(devices, id: \.self) { device in
+            HomeView()
+                .previewDevice(PreviewDevice(rawValue: device))
+                .previewDisplayName(device)
+        }
+    }
 }
