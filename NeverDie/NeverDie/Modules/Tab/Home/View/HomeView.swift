@@ -21,25 +21,32 @@ struct TodaySummaryModel: Identifiable {
 
 struct HomeView: View {
     @State private var showAddGoalModalView = false
+    @State private var showDetailView = false
     
     let todaySummaryData = TodaySummaryModel(
         lifeSaving: timeData(day: nil, hour: 1, minute: 30)
     )
     
     var body: some View {
-        ScrollView {
-            VStack(spacing: 24) {
-                topContents
-                bottomContents
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 24) {
+                    topContents
+                    bottomContents
+                }
+            }
+            .background(Color.grayBg)
+            .safeAreaPadding(.horizontal, 16)
+            .navigationDestination(isPresented: $showDetailView){
+                SegmentsContainerView()
             }
         }
-        .background(Color.grayBg)
-        .safeAreaPadding(.horizontal, 16)
     }
     
     private var topContents: some View {
         Button(action: {
             print("상세보기 클릭")
+            showDetailView = true
         }) {
             VStack(spacing: 10) {
                 TodayLifeSaving(lifeSaving: todaySummaryData.lifeSaving)
@@ -51,6 +58,7 @@ struct HomeView: View {
                 RoundedRectangle(cornerRadius: 16)
                     .fill(Color.white01)
             )
+            
         }
     }
     

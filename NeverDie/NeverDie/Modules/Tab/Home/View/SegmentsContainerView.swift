@@ -25,7 +25,7 @@ struct SegmentsContainerView: View {
                     .padding(.horizontal, 8)
 
                 // MARK: - 본문 스크롤 영역
-//                ScrollView(showsIndicators: false) {
+                ScrollView(showsIndicators: false) {
                     VStack(spacing: 0) {
                         
                         // MARK: - 상단 카드: 세그먼트 + 요약 정보 + 막대 차트
@@ -56,7 +56,7 @@ struct SegmentsContainerView: View {
                         .cornerRadius(16)
                         .frame(maxWidth: .infinity)
                     }
-//                }
+                }
             }
         }
         .safeAreaPadding(.horizontal, 16)
