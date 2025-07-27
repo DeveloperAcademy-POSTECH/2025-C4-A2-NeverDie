@@ -10,9 +10,9 @@ import Charts
 
 struct MonthView: View {
     var body: some View {
-        StepChartsView(
-            data: SegmentsModel.month.sampleStepData(),
-            title: "1개월 걸음수 & 저축 수명"
+        BarChartsView(
+            data: SegmentsModel.month.sampleStepData()
+//            title: "1개월 걸음수 & 저축 수명"
         )
     }
 }

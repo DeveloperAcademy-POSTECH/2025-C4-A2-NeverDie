@@ -18,7 +18,7 @@ struct BarChartsView: View {
                     x: .value("시간", dataPoint.hour),
                     y: .value("걸음 수", dataPoint.stepCount)
                 )
-                .foregroundStyle(.greenChart02)
+                .foregroundStyle(.green01)
             }
         }
         .frame(width: 354, height: 200)

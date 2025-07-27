@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SegmentsContainerView: View {
+struct StepDetailView: View {
     
     @StateObject private var viewModel = StepChartsViewModel() // 차트 데이터와 상태를 관리하는 뷰모델
     @State private var selectedSegment: SegmentsModel = .day   // 선택된 세그먼트 (기본값은 '1일')
@@ -64,5 +64,5 @@ struct SegmentsContainerView: View {
 }
 
 #Preview {
-    SegmentsContainerView()
+    StepDetailView()
 }
