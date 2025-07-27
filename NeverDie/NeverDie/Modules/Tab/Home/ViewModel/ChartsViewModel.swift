@@ -16,6 +16,11 @@ class StepChartsViewModel: ObservableObject {
     
     // 선택된 기간에 따른 걸음 수 데이터
     @Published var hourlyStepData: [StepData] = []
+    @Published var weeklyStepData: [StepData] = []
+    @Published var monthlyStepData: [StepData] = []
+    @Published var halfYearStepData: [StepData] = []
+    @Published var yearlyStepData: [StepData] = []
+    @Published var allStepData: [StepData] = []
     
     // 세그먼트
     @Published var selectedSegment: SegmentsModel = .day {
@@ -43,27 +48,45 @@ class StepChartsViewModel: ObservableObject {
                 StepData(hour: $0, stepCount: Int.random(in: 200...500))
             }
         case .week:
-            hourlyStepData = (0..<7).map {
+            weeklyStepData = (0..<7).map {
                 StepData(hour: $0, stepCount: Int.random(in: 3000...10000))
             }
         case .month:
-            hourlyStepData = (1...30).map {
+            monthlyStepData = (1...30).map {
                 StepData(hour: $0, stepCount: Int.random(in: 2000...9000))
             }
         case .halfYear:
-            hourlyStepData = (1...6).map {
+            halfYearStepData = (1...6).map {
                 StepData(hour: $0, stepCount: Int.random(in: 100000...200000))
             }
         case .year:
-            hourlyStepData = (1...12).map {
+            yearlyStepData = (1...12).map {
                 StepData(hour: $0, stepCount: Int.random(in: 150000...300000))
             }
         case .all:
-            hourlyStepData = (1...5).map {
+            allStepData = (1...5).map {
                 StepData(hour: $0, stepCount: Int.random(in: 500000...800000))
             }
         }
     }
+    
+    func chartData(for segment: SegmentsModel) -> [StepData] {
+        switch segment {
+        case .day:
+            return hourlyStepData
+        case .week:
+            return weeklyStepData
+        case .month:
+            return monthlyStepData
+        case .halfYear:
+            return halfYearStepData
+        case .year:
+            return yearlyStepData
+        case .all:
+            return allStepData
+        }
+    }
+
 }
 
 

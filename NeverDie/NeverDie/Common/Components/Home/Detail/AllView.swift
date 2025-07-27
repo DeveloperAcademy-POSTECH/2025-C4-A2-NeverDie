@@ -12,7 +12,6 @@ struct AllView: View {
     var body: some View {
         BarChartsView(
             data: SegmentsModel.all.sampleStepData()
-//            title: "전체 걸음수 & 저축 수명"
         )
     }
 }

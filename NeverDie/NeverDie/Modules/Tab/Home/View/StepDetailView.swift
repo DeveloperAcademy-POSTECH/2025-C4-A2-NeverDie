@@ -31,8 +31,9 @@ struct StepDetailView: View {
                         // MARK: - 상단 카드: 세그먼트 + 요약 정보 + 막대 차트
                         VStack(alignment: .leading, spacing: 16) {
                             SegmentsPickerView(selectedSegment: $selectedSegment)
-                            StepTopView(selectedSegment: $selectedSegment)
-                            BarChartsView(data: viewModel.hourlyStepData)
+                            StepTopView(selectedSegment: $selectedSegment, viewModel: viewModel)
+                            BarChartsView(data: viewModel.chartData(for: selectedSegment))
+
                         }
                         .padding(16) // 카드 내부 여백
                         .background(Color.white01)
@@ -49,7 +50,8 @@ struct StepDetailView: View {
                         // MARK: - 하단 카드: 수명 요약 + 라인 차트
                         VStack(alignment: .leading, spacing: 8) {
                             LifeBottomView(selectedSegment: $selectedSegment)
-                            LineChartsView(data: viewModel.hourlyStepData)
+                            LineChartsView(data: viewModel.chartData(for: selectedSegment))
+
                         }
                         .padding(16) // 흰 배경 내부 패딩
                         .background(Color.white01)

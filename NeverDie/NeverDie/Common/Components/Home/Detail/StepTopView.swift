@@ -13,7 +13,7 @@ struct StepTopView: View {
     @Binding var selectedSegment: SegmentsModel
     
     // 뷰모델 인스턴스를 상태 객체로 관리
-    @StateObject private var viewModel = StepChartsViewModel()
+    @ObservedObject var viewModel: StepChartsViewModel
     
     var body: some View {
         
@@ -40,7 +40,7 @@ struct StepTopView: View {
                         // 선택된 세그먼트에 따라 걸음수 제목 표시 (예: "오늘 걸음수")
                         Text(selectedSegment.stepTitle)
                             .font(.sb14)
-                            .foregroundStyle(.grayCaption01)
+                            .foregroundStyle(.grayCaption03)
                     }
                     // 걸음수 숫자와 단위를 한 줄에 배치
                     HStack(alignment: .firstTextBaseline) {
