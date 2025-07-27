@@ -12,7 +12,6 @@ struct MonthView: View {
     var body: some View {
         BarChartsView(
             data: SegmentsModel.month.sampleStepData()
-//            title: "1개월 걸음수 & 저축 수명"
         )
     }
 }

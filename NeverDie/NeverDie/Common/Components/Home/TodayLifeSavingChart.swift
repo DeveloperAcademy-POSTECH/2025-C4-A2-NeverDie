@@ -8,10 +8,12 @@
 import Charts
 import SwiftUI
 
-
+/// 년, 월, 일, 시를 입력하여 Date 객체로 만들어주는 함수
 func date(year: Int, month: Int, day: Int = 1, hour: Int = 0) -> Date {
     Calendar.current.date(from: DateComponents(year: year, month: month, day: day, hour: hour)) ?? Date()
 }
+
+// MARK: - DummyData
 struct dummyChartData {
     static let last12Hours = [
         (hour: date(year: 2025, month: 7, day: 21, hour: 4), life: 38),
@@ -40,6 +42,7 @@ struct dummyChartData {
 
 struct TodayLifeSavingChart: View {
     
+    // MARK: - Body
     var body: some View {
         Chart {
             ForEach(dummyChartData.last12Hours, id: \.hour) { data in
@@ -90,6 +93,7 @@ struct TodayLifeSavingChart: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     TodayLifeSavingChart()
 }

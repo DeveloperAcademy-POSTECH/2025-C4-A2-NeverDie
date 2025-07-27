@@ -12,7 +12,6 @@ struct YearView: View {
     var body: some View {
         BarChartsView(
             data: SegmentsModel.year.sampleStepData()
-//            title: "1년 걸음수 & 저축 수명"
         )
     }
 }

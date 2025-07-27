@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-// 단계 정보
+/// 단계 정보
 struct StageData: Identifiable {
     let id = UUID()
     let stageNum: Int
     let stageContent: String
 }
 
-// 지표별 데이터
+/// 지표별 데이터
 struct IndicatorData: Identifiable {
     let id = UUID()
     let icon: ImageResource
@@ -22,7 +22,7 @@ struct IndicatorData: Identifiable {
     let stages: [StageData]
 }
 
-// 전체 데이터
+/// 전체 데이터
 let goalInfoList: [IndicatorData] = [
     IndicatorData(
         icon: .stepCountIcon,
@@ -33,12 +33,20 @@ let goalInfoList: [IndicatorData] = [
             StageData(stageNum: 3, stageContent: "하루에 13,000걸음 걷기")
         ]
     )
+    /// 추후 추가 가능
 ]
 
 struct AddGoalModalView: View {
+    
+    // MARK: - Property
+    
+    /// 선택된 지표를 저장
     @State private var selectedIndicatorID: UUID? = goalInfoList.first?.id
+    
+    /// 선택된 목표를 저장
     @State private var selectedStageID: UUID?
     
+    // MARK: - Body
     var body: some View {
         ZStack(alignment: .bottom) {
             VStack {
@@ -55,6 +63,8 @@ struct AddGoalModalView: View {
         .safeAreaPadding(.horizontal, 16)
     }
     
+    // MARK: - ModalHeader
+    /// 헤더: 인디케이터 + 타이틀
     private var modalHeader: some View {
         VStack(spacing: 8) {
             RoundedRectangle(cornerRadius: 3)
@@ -71,6 +81,8 @@ struct AddGoalModalView: View {
         .background(Color.white01)
     }
     
+    // MARK: - ModalContents
+    /// 내용: '지표'를 ForEach로 나열, 선택된 지표에 해당하는 '목표 난이도' 나열
     private var modalContents: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
@@ -123,6 +135,7 @@ struct AddGoalModalView: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     AddGoalModalView()
 }
