@@ -20,7 +20,7 @@ struct GoalStatus: View {
     let goal: Int
     let percent: Int
     
-    @State var isExpanded: Bool = true
+    @State var isExpanded: Bool = false
     
     var body: some View {
         VStack(spacing: 9) {
