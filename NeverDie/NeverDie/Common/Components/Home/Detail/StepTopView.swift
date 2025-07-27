@@ -57,9 +57,15 @@ struct StepTopView: View {
             }
             
             // 현재 날짜 표시 (ex: 7월 25일)
-            Text(formattedDate(viewModel.currentDate))
-                .font(.sb14)
-                .foregroundColor(.grayCaption03)
+            Text(
+                selectedSegment.dateRangeText(
+                    from: viewModel.currentDate,
+                    firstRecordDate: viewModel.firstRecordDate // 이건 뷰모델에 넣을 값
+                )
+            )
+            .font(.sb14)
+            .foregroundColor(.grayCaption03)
+
         }
     }
 }

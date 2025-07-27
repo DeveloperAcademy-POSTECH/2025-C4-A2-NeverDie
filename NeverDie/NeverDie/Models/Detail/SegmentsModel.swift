@@ -38,6 +38,49 @@ enum SegmentsModel: String, CaseIterable, Identifiable {
         }
     }
     
+    // MARK: 세그먼트별 날짜 범위 텍스트 (e.g. "7월 21일 ~ 7월 27일")
+        func dateRangeText(from referenceDate: Date, firstRecordDate: Date? = nil) -> String {
+            let calendar = Calendar.current
+            let formatter = DateFormatter()
+            formatter.locale = Locale(identifier: "ko_KR")
+            formatter.dateFormat = "M월 d일"
+
+            let startDate: Date
+            let endDate: Date
+
+            switch self {
+            case .day:
+                // 당일
+                return formatter.string(from: referenceDate)
+
+            case .week:
+                startDate = calendar.date(byAdding: .day, value: -6, to: referenceDate)!
+                endDate = referenceDate
+
+            case .month:
+                startDate = calendar.date(byAdding: .weekOfYear, value: -4, to: referenceDate)!
+                endDate = referenceDate
+
+            case .halfYear:
+                startDate = calendar.date(byAdding: .month, value: -5, to: referenceDate)!
+                endDate = referenceDate
+
+            case .year:
+                startDate = calendar.date(byAdding: .year, value: -1, to: referenceDate)!
+                endDate = referenceDate
+
+            case .all:
+                guard let first = firstRecordDate else {
+                    return "기록 없음"
+                }
+                let firstYear = calendar.component(.year, from: first)
+                let currentYear = calendar.component(.year, from: referenceDate)
+                return "\(firstYear)년 ~ \(currentYear)년"
+            }
+
+            return "\(formatter.string(from: startDate)) ~ \(formatter.string(from: endDate))"
+        }
+    
     
     // MARK: 임시 차트 축 데이터
     func sampleStepData() -> [StepData] {

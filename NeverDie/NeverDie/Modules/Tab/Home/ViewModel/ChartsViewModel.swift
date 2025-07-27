@@ -10,6 +10,7 @@ import HealthKit
 
 @MainActor
 class StepChartsViewModel: ObservableObject {
+    @Published var firstRecordDate: Date? = Calendar.current.date(byAdding: .year, value: -2, to: Date()) // 예시
     
     // 날짜 데이터 사용
     @Published var currentDate: Date = Date()
@@ -26,21 +27,21 @@ class StepChartsViewModel: ObservableObject {
     @Published var selectedSegment: SegmentsModel = .day {
         didSet { loadData(for: selectedSegment) }
     }
-
+    
     // 총 걸음수 계산 (더미 데이터 기준 합계)
     var totalSteps: Int {
-        hourlyStepData.map(\.stepCount).reduce(0, +)
+        chartData(for: selectedSegment).map(\.stepCount).reduce(0, +)
     }
-
+    
     // 총 저축된 수명(분) 계산: 예를 들어 1,000걸음당 1분이라 가정
     var totalSavedMinutes: Double {
         Double(totalSteps) / 1000.0
     }
-
+    
     init() {
         loadData(for: selectedSegment)
     }
-
+    
     func loadData(for segment: SegmentsModel) {
         switch segment {
         case .day:
@@ -86,7 +87,9 @@ class StepChartsViewModel: ObservableObject {
             return allStepData
         }
     }
-
+    
 }
+
+
 
 
