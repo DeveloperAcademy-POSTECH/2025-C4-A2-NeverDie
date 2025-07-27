@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct GoalIndicatorCard: View {
+    
+    // MARK: - Property
+    
+    /// 지표(걸음수, 수면 등)에 해당하는 아이콘
     let icon: ImageResource
+    
+    /// 지표 이름(걸음수, 수면 등)
     let text: String
+    
+    /// 해당 지표가 선택되었는지 여부
     let isSelected: Bool
+    
+    /// 해당 지표를 클릭했을 때의 액션
     let action: () -> Void
     
+    // MARK: - Body
     var body: some View {
         Button(action: action) {
             VStack(spacing: 4) {
