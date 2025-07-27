@@ -22,18 +22,17 @@ class StepChartsViewModel: ObservableObject {
     @Published var halfYearStepData: [StepData] = []
     @Published var yearlyStepData: [StepData] = []
     @Published var allStepData: [StepData] = []
-    
+
     // 세그먼트
     @Published var selectedSegment: SegmentsModel = .day {
         didSet { loadData(for: selectedSegment) }
     }
-    
     // 총 걸음수 계산 (더미 데이터 기준 합계)
     var totalSteps: Int {
         chartData(for: selectedSegment).map(\.stepCount).reduce(0, +)
     }
     
-    // 총 저축된 수명(분) 계산: 예를 들어 1,000걸음당 1분이라 가정
+   // 총 저축된 수명(분) 계산: 예를 들어 1,000걸음당 1분이라 가정
     var totalSavedMinutes: Double {
         Double(totalSteps) / 1000.0
     }
@@ -41,7 +40,7 @@ class StepChartsViewModel: ObservableObject {
     init() {
         loadData(for: selectedSegment)
     }
-    
+
     func loadData(for segment: SegmentsModel) {
         switch segment {
         case .day:
@@ -89,7 +88,4 @@ class StepChartsViewModel: ObservableObject {
     }
     
 }
-
-
-
 
