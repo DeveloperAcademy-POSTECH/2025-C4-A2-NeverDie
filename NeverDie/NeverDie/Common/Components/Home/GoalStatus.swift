@@ -26,9 +26,11 @@ struct GoalStatus: View {
         VStack(spacing: 9) {
             HStack(spacing: 2) {
                 Image(sectionIcon)
+                    .renderingMode(.template)
                     .resizable()
-                    .frame(width: 10, height: 15)
-                
+                    .frame(width: 19, height: 19)
+                    .foregroundColor(Color.green01)
+
                 Text(sectionTitle)
                     .font(.b20)
                     .foregroundStyle(Color.black01)
@@ -59,6 +61,13 @@ struct GoalStatus: View {
                 .fill(Color.white01)
         )
         .animation(.easeInOut, value: isExpanded)
+        .contextMenu {
+            Button(role: .destructive, action: {
+                print("목표 삭제 버튼 클릭")
+            }) {
+                Label("목표 삭제", systemImage: "xmark.bin")
+            }
+        }
     }
     
     private func goalProgressBar(barHeight: CGFloat) -> some View {

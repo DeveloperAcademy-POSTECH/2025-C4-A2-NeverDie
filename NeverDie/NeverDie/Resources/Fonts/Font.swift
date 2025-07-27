@@ -116,6 +116,9 @@ extension Font {
         return .sfPro(type: .bold, size: 32)
     }
     
+    static var sfR24: Font {
+        return .sfPro(type: .regular, size: 24)
+    }
     static var sfR16: Font {
         return .sfPro(type: .regular, size: 16)
     }
