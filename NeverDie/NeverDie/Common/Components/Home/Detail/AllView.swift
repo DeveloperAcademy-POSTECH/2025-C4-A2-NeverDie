@@ -10,9 +10,8 @@ import Charts
 
 struct AllView: View {
     var body: some View {
-        StepChartsView(
-            data: SegmentsModel.all.sampleStepData(),
-            title: "전체 걸음수 & 저축 수명"
+        BarChartsView(
+            data: SegmentsModel.all.sampleStepData()
         )
     }
 }

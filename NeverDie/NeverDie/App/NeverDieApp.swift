@@ -28,7 +28,7 @@ struct NeverDieApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SegmentsContainerView()
+            HomeView()
         }
         .modelContainer(sharedModelContainer)
     }

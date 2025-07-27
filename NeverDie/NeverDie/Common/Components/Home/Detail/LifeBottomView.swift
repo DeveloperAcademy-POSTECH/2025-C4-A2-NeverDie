@@ -19,8 +19,8 @@ struct LifeBottomView: View {
         
         bottomView
         // selectedSegment가 변경될 때 뷰모델의 selectedSegment에 값 전달
-            .onChange(of: selectedSegment) { newValue in
-                viewModel.selectedSegment = newValue
+            .onChange(of: selectedSegment) {
+                viewModel.selectedSegment = selectedSegment
             }
     }
     
@@ -30,23 +30,24 @@ struct LifeBottomView: View {
             HStack {
                 // 파란색 점 표시
                 Circle()
-                    .fill(Color.blue)
+                    .fill(Color.blue01)
                     .frame(width: 8, height: 8)
                 
-                // 선택된 세그먼트에 따른 수명 제목 표시 (예: "절약된 시간")
+                // 선택된 세그먼트에 따른 수명 제목 표시 (예: 오늘 누적 수명)
                 Text(selectedSegment.lifespanTitle)
-                    .font(.captionSemiBold12)
-                    .foregroundStyle(.grayCaption02)
+                    .font(.sb14)
+                    .foregroundStyle(.grayCaption03)
             }
             // 수명 숫자와 단위를 한 줄에 배치
             HStack(alignment: .firstTextBaseline, spacing: 0) {
                 // 수명(분) 숫자, 큰 폰트
                 Text("\(Int(viewModel.totalSavedMinutes))")
-                    .font(.largeTitleSemiBold32)
+                    .font(.sfB32)
+                    .foregroundStyle(.black01)
                 // 단위 "분", 작은 폰트에 회색 스타일
-                Text(" 분")
-                    .font(.calloutSemiBold14)
-                    .foregroundStyle(.grayCaption02)
+                Text("분")
+                    .font(.sb16)
+                    .foregroundStyle(.grayCaption03)
             }
         }
     }

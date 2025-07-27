@@ -41,7 +41,7 @@ struct HomeView: View {
             .background(Color.grayBg)
             .safeAreaPadding(.horizontal, 16)
             .navigationDestination(isPresented: $showDetailView){
-                SegmentsContainerView()
+                StepDetailView()
             }
         }
     }

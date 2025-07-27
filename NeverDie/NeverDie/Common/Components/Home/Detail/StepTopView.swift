@@ -13,17 +13,15 @@ struct StepTopView: View {
     @Binding var selectedSegment: SegmentsModel
     
     // 뷰모델 인스턴스를 상태 객체로 관리
-    @StateObject private var viewModel = StepChartsViewModel()
+    @ObservedObject var viewModel: StepChartsViewModel
     
     var body: some View {
         
         topView
         // selectedSegment가 변경될 때 뷰모델의 selectedSegment에 값 전달
-            .onChange(of: selectedSegment) { newValue in
-                viewModel.selectedSegment = newValue
+            .onChange(of: selectedSegment) {
+                viewModel.selectedSegment = selectedSegment
             }
-
-        
     }
     
     // 실제 UI 구성 뷰
@@ -36,31 +34,38 @@ struct StepTopView: View {
                     HStack {
                         // 초록색 점 표시
                         Circle()
-                            .fill(Color.greenChart02)
+                            .fill(Color.green01)
                             .frame(width: 8, height: 8)
                         
                         // 선택된 세그먼트에 따라 걸음수 제목 표시 (예: "오늘 걸음수")
                         Text(selectedSegment.stepTitle)
-                            .font(.captionSemiBold12)
-                            .foregroundStyle(.grayCaption02)
+                            .font(.sb14)
+                            .foregroundStyle(.grayCaption03)
                     }
                     // 걸음수 숫자와 단위를 한 줄에 배치
                     HStack(alignment: .firstTextBaseline) {
                         // 걸음수 숫자, 큰 폰트
                         Text("\(viewModel.totalSteps.formatted())")
-                            .font(.largeTitleSemiBold32)
+                            .font(.sfB32)
+                            .foregroundStyle(.black01)
                         // 단위 "걸음", 작은 폰트에 회색 스타일
                         Text("걸음")
-                            .font(.calloutSemiBold14)
-                            .foregroundStyle(.grayCaption02)
+                            .font(.sb16)
+                            .foregroundStyle(.grayCaption03)
                     }
                 }
             }
             
             // 현재 날짜 표시 (ex: 7월 25일)
-            Text(formattedDate(viewModel.currentDate))
-                .font(.captionSemiBold12)
-                .foregroundColor(.grayCaption03)
+            Text(
+                selectedSegment.dateRangeText(
+                    from: viewModel.currentDate,
+                    firstRecordDate: viewModel.firstRecordDate // 이건 뷰모델에 넣을 값
+                )
+            )
+            .font(.sb14)
+            .foregroundColor(.grayCaption03)
+
         }
     }
 }
