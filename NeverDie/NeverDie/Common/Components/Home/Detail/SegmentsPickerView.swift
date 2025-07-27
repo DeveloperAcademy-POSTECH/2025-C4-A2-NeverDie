@@ -18,6 +18,6 @@ struct SegmentsPickerView: View {
             }
         }
         .pickerStyle(.segmented)
-        .padding(.horizontal)
+
     }
 }
