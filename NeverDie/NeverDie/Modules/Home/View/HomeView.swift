@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - DummyData Model
+
 struct timeData: Identifiable {
     let id = UUID()
     let day: Int?
@@ -14,19 +16,20 @@ struct timeData: Identifiable {
     let minute: Int
 }
 
-struct TodaySummaryModel: Identifiable {
-    let id = UUID()
-    let lifeSaving: timeData
-}
-
 struct HomeView: View {
+    
+    // MARK: - Property
+    
+    /// 모달을 보여줄지 말지
     @State private var showAddGoalModalView = false
+    
+    /// 상세 뷰로 이동할지 말지
     @State private var showDetailView = false
     
-    let todaySummaryData = TodaySummaryModel(
-        lifeSaving: timeData(day: nil, hour: 1, minute: 30)
-    )
+    // MARK: - DummyData
+    let todaySummaryData = timeData(day: nil, hour: 1, minute: 30)
     
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -43,13 +46,14 @@ struct HomeView: View {
         }
     }
     
+    // MARK: - TopContents
+    /// 상단 컨텐츠: 오늘의 저축 수명 섹션 (시간 + 지난 12시간 그래프)
     private var topContents: some View {
         Button(action: {
-            print("상세보기 클릭")
             showDetailView = true
         }) {
             VStack(spacing: 10) {
-                TodayLifeSaving(lifeSaving: todaySummaryData.lifeSaving)
+                TodayLifeSaving(lifeSaving: todaySummaryData)
                 TodayLifeSavingChart()
             }
             .padding(.horizontal, 20)
@@ -62,16 +66,20 @@ struct HomeView: View {
         }
     }
     
+    // MARK: - BottomContents
+    // 하단 컨텐츠: 목표 현황 섹션(헤더 + 반복 컴포넌트)
     private var bottomContents: some View {
         VStack(alignment: .leading, spacing: 8) {
-            bottomContentsTitle
+            bottomContentsHeader
             
-            GoalStatus(sectionIcon: ImageResource.stepCountIcon, sectionTitle: "걸음수", goalStage: 3, currentStatus: 10521, goal: 13000, percent: 80)
+            GoalStatus(icon: ImageResource.stepCountIcon, title: "걸음수", goalStage: 3, currentStatus: 10521, goal: 13000, percent: 80)
             
         }
     }
     
-    private var bottomContentsTitle: some View {
+    /// '목표 현황' 섹션의 헤더: 타이틀 + 추가 버튼
+    /// + 버튼을 클릭시 AddGoalModalView가 나타남
+    private var bottomContentsHeader: some View {
         HStack {
             Text("목표 현황")
                 .font(.b24)
@@ -99,6 +107,8 @@ struct HomeView: View {
     }
 }
 
+
+// MARK: - Preview
 #Preview {
     HomeView()
 }

@@ -8,17 +8,29 @@
 import SwiftUI
 
 struct GoalStageCard: View {
+    
+    // MARK: - Property
+    
+    /// 몇 단계인지 (1, 2, 3 등)
     let stageNum: Int
+    
+    /// 단계의 내용
     let stageContent: String
+    
+    /// 이 단계가 선택되었는지 여부
     let isSelected: Bool
+    
+    /// 해당 단계를 클릭했을 때의 액션
     let action: () -> Void
     
+    // MARK: - Body
     var body: some View {
         Button(action: action) {
             HStack(spacing: 20) {
                 Image(systemName: "checkmark.circle.fill")
                     .font(.sfR24)
                     .foregroundColor(isSelected ? Color.blue01 : Color.grayCaption00)
+                    .figmaLineHeight(fontSize: 24)
 
                 VStack(alignment: .leading, spacing: 5) {
                     Text("\(stageNum)단계")
@@ -30,7 +42,6 @@ struct GoalStageCard: View {
                         .font(.m16)
                         .foregroundStyle(Color.grayCaption02)
                         .figmaLineHeight(fontSize: 16)
-                    
                 }
                 
             }

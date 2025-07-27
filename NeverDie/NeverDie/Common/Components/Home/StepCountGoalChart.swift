@@ -9,8 +9,13 @@ import Charts
 import SwiftUI
 
 struct StepCountGoalChart: View {
+    
+    // MARK: - Property
+    
+    /// 가장 최근 날짜를 저장: 최근 날짜만 컬러를 주기 위함
     private let lastDay = dummyChartData.last7days.last?.day
     
+    // MARK: - Body
     var body: some View {
         Chart {
             ForEach(dummyChartData.last7days, id: \.day) { data in
@@ -27,6 +32,7 @@ struct StepCountGoalChart: View {
     }
 }
 
+// MARK: - Preview
 #Preview {
     StepCountGoalChart()
 }

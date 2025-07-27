@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct TodayLifeSaving: View {
+    
+    // MARK: - Property
+    /// 저축 수명을 'day: 1, hour: 2, minute: 30'의 형태로 전달
     let lifeSaving: timeData
     
+    // MARK: - Body
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(alignment: .center) {
@@ -30,9 +34,9 @@ struct TodayLifeSaving: View {
                 [
                     lifeSaving.day.map { "\($0)일" },
                     lifeSaving.hour.map { "\($0)시간" },
-                    "\(lifeSaving.minute)분" // minute는 필수니까 무조건 표시
+                    "\(lifeSaving.minute)분" /// minute는 필수니까 무조건 표시
                 ]
-                    .compactMap { $0 } // nil인 항목은 제거
+                    .compactMap { $0 } /// nil인 항목은 제거
                     .joined(separator: " ")
             )
             .font(.suitH40)
