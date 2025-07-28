@@ -74,7 +74,7 @@ final class HomeViewModel {
         for hourOffset in (-11...0) {
             let date = calendar.date(byAdding: .hour, value: hourOffset, to: now)!
             let hour = calendar.component(.hour, from: date)
-            let lifeSpanChange = Double.random(in: 10...30)
+            let lifeSpanChange = Double.random(in: 10...30) // 10~30분 수명 범위 랜덤
             data.append(LifeSpan(date: date, hour: hour, lifeSpanChange: lifeSpanChange))
         }
         return data
@@ -87,7 +87,7 @@ final class HomeViewModel {
         
         for dayOffset in (-6...0) {
             let date = calendar.date(byAdding: .day, value: dayOffset, to: today)!
-            let randomStepCount = Int.random(in: 5000...25000) // 5,000~25,000 걸음 범위 랜덤
+            let randomStepCount = Int.random(in: 5000...15000) // 5,000~15,000 걸음 범위 랜덤
             let distance = Double(randomStepCount) * 0.7
             let calories = Double(randomStepCount) * 0.04
             let session = WalkingSession(
