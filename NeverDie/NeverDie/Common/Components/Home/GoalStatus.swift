@@ -36,6 +36,9 @@ struct GoalStatus: View {
     /// 몇 퍼센트 달성했는지
     let percent: Int
     
+    /// 걸음수 정보 (차트에 전달)
+    let walkingSessions: [WalkingSession]
+    
     /// 토글의 확장 여부를 상태로 관리
     @State var isExpanded: Bool = false
     
@@ -141,7 +144,7 @@ struct GoalStatus: View {
         VStack(spacing: 12) { /// 두 개의 HStack 포함
             /// 첫 번째 HStack
             HStack(alignment: .bottom) {
-                StepCountGoalChart()
+                StepCountGoalChart(walkingSessions: walkingSessions)
                     .padding(.top, 30)
                     .padding(.bottom, 8)
                 
@@ -181,9 +184,4 @@ struct GoalStatus: View {
             }
         }
     }
-}
-
-// MARK: - Preview
-#Preview {
-    GoalStatus(icon: ImageResource.stepCountIcon, title: "걸음수", goalStage: 3, currentStatus: 10521, goal: 13000, percent: 80)
 }

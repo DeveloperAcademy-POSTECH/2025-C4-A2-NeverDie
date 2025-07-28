@@ -19,6 +19,11 @@ struct timeData: Identifiable {
 struct HomeView: View {
     
     // MARK: - Property
+    /// 뷰모델
+    private var viewModel = HomeViewModel(
+        lifeSpanService: LifeSpanService(),
+        healthKitService: HealthKitService()
+    )
     
     /// 모달을 보여줄지 말지
     @State private var showAddGoalModalView = false
@@ -54,7 +59,7 @@ struct HomeView: View {
         }) {
             VStack(spacing: 10) {
                 TodayLifeSaving(lifeSaving: todaySummaryData)
-                TodayLifeSavingChart()
+                TodayLifeSavingChart(lifeSpanData: viewModel.todayLifeSpanData)
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 16)
@@ -72,7 +77,15 @@ struct HomeView: View {
         VStack(alignment: .leading, spacing: 8) {
             bottomContentsHeader
             
-            GoalStatus(icon: ImageResource.stepCountIcon, title: "걸음수", goalStage: 3, currentStatus: 10521, goal: 13000, percent: 80)
+            GoalStatus(
+                icon: ImageResource.stepCountIcon,
+                title: "걸음수",
+                goalStage: 3,
+                currentStatus: 10521,
+                goal: 13000,
+                percent: 80,
+                walkingSessions: viewModel.weeklyWalkingSessions
+            )
             
         }
     }

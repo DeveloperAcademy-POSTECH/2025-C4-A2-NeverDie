@@ -8,40 +8,20 @@
 import Charts
 import SwiftUI
 
-// MARK: - DummyData
-struct DummyLifeSpanData {
-    
-    /// 최근 12시간의 LifeSpan 더미 데이터 생성
-    static var last12Hours: [LifeSpan] {
-        let calendar = Calendar.current
-        let now = Date()
-        var data: [LifeSpan] = []
-        
-        for hourOffset in (-11...0) {
-            let date = calendar.date(byAdding: .hour, value: hourOffset, to: now)!
-            let hour = calendar.component(.hour, from: date)
-            // 임의의 수명 변화량: 10 ~ 30분 범위 내 랜덤 값
-            let lifeSpanChange = Double.random(in: 10...30)
-            data.append(LifeSpan(date: date, hour: hour, lifeSpanChange: lifeSpanChange))
-        }
-        return data
-    }
-}
-
 struct TodayLifeSavingChart: View {
     // MARK: - Property
-    let dummtData = DummyLifeSpanData.last12Hours
-    
+    let lifeSpanData: [LifeSpan]
+
     // MARK: - Body
     var body: some View {
         
         // 더미 데이터에서 최대값 구하기
-        let maxValue = dummtData.map { $0.lifeSpanChange }.max() ?? 0
+        let maxValue = lifeSpanData.map { $0.lifeSpanChange }.max() ?? 0
         let upperBound = Int(ceil(maxValue / 20)) * 20
         let ticks = Array(stride(from: 0, through: upperBound, by: 20))
 
         Chart {
-            ForEach(dummtData, id: \.startTime) { lifeSpan in
+            ForEach(lifeSpanData, id: \.startTime) { lifeSpan in
                 AreaMark(
                     x: .value("Hour", lifeSpan.startTime, unit: .hour),
                     y: .value("수명", lifeSpan.lifeSpanChange)
@@ -92,9 +72,4 @@ struct TodayLifeSavingChart: View {
             }
         }
     }
-}
-
-// MARK: - Preview
-#Preview {
-    TodayLifeSavingChart()
 }
