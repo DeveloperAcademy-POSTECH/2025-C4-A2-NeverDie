@@ -9,21 +9,24 @@ import Charts
 import SwiftUI
 
 struct StepCountGoalChart: View {
-    
+
     // MARK: - Property
     
-    /// 가장 최근 날짜를 저장: 최근 날짜만 컬러를 주기 위함
-    private let lastDay = dummyChartData.last7days.last?.day
+    /// 걸음수 데이터
+    let walkingSessions: [WalkingSession]
     
+    /// 가장 최근 날짜를 저장: 최근 날짜만 컬러를 주기 위함
+    private var lastDay: Date? { walkingSessions.last?.date }
+        
     // MARK: - Body
     var body: some View {
         Chart {
-            ForEach(dummyChartData.last7days, id: \.day) { data in
+            ForEach(walkingSessions, id: \.date) { session in
                 BarMark(
-                    x: .value("Hour", data.day, unit: .day),
-                    y: .value("걸음수", data.stepCount)
+                    x: .value("Hour", session.date, unit: .day),
+                    y: .value("걸음수", session.stepCount)
                 )
-                .foregroundStyle(data.day == lastDay ? Color.green01 : Color.grayCaption01)
+                .foregroundStyle(session.date == lastDay ? Color.green01 : Color.grayCaption01)
             }
         }
         .frame(width: 120, height: 70)
@@ -31,9 +34,3 @@ struct StepCountGoalChart: View {
         .chartYAxis(.hidden)
     }
 }
-
-// MARK: - Preview
-#Preview {
-    StepCountGoalChart()
-}
-

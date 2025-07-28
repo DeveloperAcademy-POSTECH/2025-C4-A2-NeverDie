@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-/// 진행률 막대의 길이를 유동적으로 계산하기 위한 함수
-/// 퍼센트와 최대 길이(화면 가로 길이)를 받아서 해당 퍼센트의 길이를 계산
-private func progressBarWidth(for percent: Int, maxWidth: CGFloat) -> CGFloat {
-    let clampedPercent = max(0, min(percent, 100))
-    return maxWidth * CGFloat(clampedPercent) / 100
-}
-
 struct GoalStatus: View {
     
     // MARK: - Property
@@ -27,17 +20,35 @@ struct GoalStatus: View {
     /// 몇 단계 목표인지
     let goalStage: Int
     
-    /// 현재 상태(현재 걸음수, 현재 수면량 등)
-    let currentStatus: Int
-    
-    /// 최종 목표(목표 걸음수, 목표 수면량 등)
-    let goal: Int
-    
-    /// 몇 퍼센트 달성했는지
-    let percent: Int
+    /// 걸음수 정보 (차트에 전달)
+    let walkingSessions: [WalkingSession]
     
     /// 토글의 확장 여부를 상태로 관리
     @State var isExpanded: Bool = false
+    
+    /// `goalStage`에 해당하는 실제 목표값을 goalInfoList에서 찾아 반환
+    private var goal: Int {
+        // goalInfoList에서 title과 일치하는 IndicatorData를 찾음
+        guard let indicator = goalInfoList.first(where: { $0.text == title }) else {
+            return 0
+        }
+        // 해당 indicator의 stages에서 goalStage에 맞는 stageGoal 찾기
+        return indicator.stages.first(where: { $0.stageNum == goalStage })?.stageGoal ?? 0
+    }
+    
+    /// 가장 최근 걸음 수 (최근 날짜의 걸음 수)
+    private var currentStatus: Int {
+        walkingSessions
+            .sorted { $0.date < $1.date }
+            .last?.stepCount ?? 0
+    }
+    
+    /// 목표 대비 진행률(%) 계산
+    private var percent: Int {
+        guard goal > 0 else { return 0 }
+        let ratio = Double(currentStatus) / Double(goal)
+        return min(Int(ratio * 100), 100)  // 100% 초과 방지
+    }
     
     // MARK: - Body
     var body: some View {
@@ -48,7 +59,7 @@ struct GoalStatus: View {
                     .resizable()
                     .frame(width: 19, height: 19)
                     .foregroundColor(Color.green01)
-
+                
                 Text(title)
                     .font(.b20)
                     .foregroundStyle(Color.black01)
@@ -89,23 +100,6 @@ struct GoalStatus: View {
         }
     }
     
-    // MARK: - GoalProgressBar
-    /// 목표의 진행률을 나타내는 막대: %에 따라 유동적으로 나타남
-    private func goalProgressBar(barHeight: CGFloat) -> some View {
-        GeometryReader { geometry in
-            ZStack(alignment: .leading) {
-                RoundedRectangle(cornerRadius: 4)
-                    .frame(height: barHeight)
-                    .foregroundStyle(Color.grayCaption00)
-                
-                RoundedRectangle(cornerRadius: 4)
-                    .frame(width: progressBarWidth(for: percent, maxWidth: geometry.size.width), height: barHeight)
-                    .foregroundStyle(Color.green01)
-            }
-        }
-        .frame(height: barHeight)
-    }
-    
     // MARK: - SummaryContent
     /// 접혀있을 때 내용
     private var summaryContent: some View {
@@ -131,7 +125,7 @@ struct GoalStatus: View {
             }
             
             /// 진행률 막대
-            goalProgressBar(barHeight: 12)
+            GoalProgressBar(barHeight: 12, percent: percent)
         }
     }
     
@@ -141,7 +135,7 @@ struct GoalStatus: View {
         VStack(spacing: 12) { /// 두 개의 HStack 포함
             /// 첫 번째 HStack
             HStack(alignment: .bottom) {
-                StepCountGoalChart()
+                StepCountGoalChart(walkingSessions: walkingSessions)
                     .padding(.top, 30)
                     .padding(.bottom, 8)
                 
@@ -164,7 +158,6 @@ struct GoalStatus: View {
                     }
                 }
             }
-            
             /// 두 번째 HStack
             HStack(spacing: 8) {
                 Text("목표 \(goalStage)단계")
@@ -172,7 +165,7 @@ struct GoalStatus: View {
                     .foregroundStyle(Color.grayCaption03)
                     .figmaLineHeight(fontSize: 16)
                 
-                goalProgressBar(barHeight: 8)
+                GoalProgressBar(barHeight: 8, percent: percent)
                 
                 Text("\(percent)%")
                     .font(.m16)
@@ -181,9 +174,4 @@ struct GoalStatus: View {
             }
         }
     }
-}
-
-// MARK: - Preview
-#Preview {
-    GoalStatus(icon: ImageResource.stepCountIcon, title: "걸음수", goalStage: 3, currentStatus: 10521, goal: 13000, percent: 80)
 }

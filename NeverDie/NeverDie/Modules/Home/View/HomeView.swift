@@ -9,25 +9,20 @@ import SwiftUI
 
 // MARK: - DummyData Model
 
-struct timeData: Identifiable {
-    let id = UUID()
-    let day: Int?
-    let hour: Int?
-    let minute: Int
-}
-
 struct HomeView: View {
     
     // MARK: - Property
+    /// 뷰모델
+    private var viewModel = HomeViewModel(
+        lifeSpanService: LifeSpanService(),
+        healthKitService: HealthKitService()
+    )
     
     /// 모달을 보여줄지 말지
     @State private var showAddGoalModalView = false
     
     /// 상세 뷰로 이동할지 말지
     @State private var showDetailView = false
-    
-    // MARK: - DummyData
-    let todaySummaryData = timeData(day: nil, hour: 1, minute: 30)
     
     // MARK: - Body
     var body: some View {
@@ -37,6 +32,9 @@ struct HomeView: View {
                     topContents
                     bottomContents
                 }
+            }
+            .refreshable {
+                await viewModel.refreshData()
             }
             .background(Color.grayBg)
             .safeAreaPadding(.horizontal, 16)
@@ -53,8 +51,8 @@ struct HomeView: View {
             showDetailView = true
         }) {
             VStack(spacing: 10) {
-                TodayLifeSaving(lifeSaving: todaySummaryData)
-                TodayLifeSavingChart()
+                TodayLifeSaving(lifeSaving: viewModel.todayLifeSavingData)
+                TodayLifeSavingChart(lifeSpanData: viewModel.todayLifeSpanData)
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 16)
@@ -72,7 +70,12 @@ struct HomeView: View {
         VStack(alignment: .leading, spacing: 8) {
             bottomContentsHeader
             
-            GoalStatus(icon: ImageResource.stepCountIcon, title: "걸음수", goalStage: 3, currentStatus: 10521, goal: 13000, percent: 80)
+            GoalStatus(
+                icon: ImageResource.stepCountIcon,
+                title: "걸음수",
+                goalStage: 3,
+                walkingSessions: viewModel.weeklyWalkingSessions
+            )
             
         }
     }

@@ -8,47 +8,23 @@
 import Charts
 import SwiftUI
 
-/// 년, 월, 일, 시를 입력하여 Date 객체로 만들어주는 함수
-func date(year: Int, month: Int, day: Int = 1, hour: Int = 0) -> Date {
-    Calendar.current.date(from: DateComponents(year: year, month: month, day: day, hour: hour)) ?? Date()
-}
-
-// MARK: - DummyData
-struct dummyChartData {
-    static let last12Hours = [
-        (hour: date(year: 2025, month: 7, day: 21, hour: 4), life: 38),
-        (hour: date(year: 2025, month: 7, day: 21, hour: 5), life: 12),
-        (hour: date(year: 2025, month: 7, day: 21, hour: 6), life: 13),
-        (hour: date(year: 2025, month: 7, day: 21, hour: 7), life: 44),
-        (hour: date(year: 2025, month: 7, day: 21, hour: 8), life: 34),
-        (hour: date(year: 2025, month: 7, day: 21, hour: 9), life: 25),
-        (hour: date(year: 2025, month: 7, day: 21, hour: 10), life: 33),
-        (hour: date(year: 2025, month: 7, day: 21, hour: 11), life: 23),
-        (hour: date(year: 2025, month: 7, day: 21, hour: 12), life: 36),
-        (hour: date(year: 2025, month: 7, day: 21, hour: 13), life: 12),
-        (hour: date(year: 2025, month: 7, day: 21, hour: 14), life: 23)
-    ]
-    
-    static let last7days = [
-        (day: date(year: 2025, month: 7, day: 20), stepCount: 24945),
-        (day: date(year: 2025, month: 7, day: 21), stepCount: 22438),
-        (day: date(year: 2025, month: 7, day: 22), stepCount: 18812),
-        (day: date(year: 2025, month: 7, day: 23), stepCount: 20033),
-        (day: date(year: 2025, month: 7, day: 24), stepCount: 8344),
-        (day: date(year: 2025, month: 7, day: 25), stepCount: 7434),
-        (day: date(year: 2025, month: 7, day: 26), stepCount: 10528)
-    ]
-}
-
 struct TodayLifeSavingChart: View {
-    
+    // MARK: - Property
+    let lifeSpanData: [LifeSpan]
+
     // MARK: - Body
     var body: some View {
+        
+        // 더미 데이터에서 최대값 구하기
+        let maxValue = lifeSpanData.map { $0.lifeSpanChange }.max() ?? 0
+        let upperBound = Int(ceil(maxValue / 20)) * 20
+        let ticks = Array(stride(from: 0, through: upperBound, by: 20))
+
         Chart {
-            ForEach(dummyChartData.last12Hours, id: \.hour) { data in
+            ForEach(lifeSpanData, id: \.startTime) { lifeSpan in
                 AreaMark(
-                    x: .value("Hour", data.hour, unit: .hour),
-                    y: .value("수명", data.life)
+                    x: .value("Hour", lifeSpan.startTime, unit: .hour),
+                    y: .value("수명", lifeSpan.lifeSpanChange)
                 )
                 .foregroundStyle(
                     LinearGradient(
@@ -56,13 +32,12 @@ struct TodayLifeSavingChart: View {
                         startPoint: .top, endPoint: .bottom
                     )
                 )
-            }
-            ForEach(dummyChartData.last12Hours, id: \.hour) { data in
                 LineMark(
-                    x: .value("Hour", data.hour, unit: .hour),
-                    y: .value("수명", data.life)
+                    x: .value("Hour", lifeSpan.startTime, unit: .hour),
+                    y: .value("수명", lifeSpan.lifeSpanChange)
                 )
                 .foregroundStyle(Color.blue01)
+                .lineStyle(StrokeStyle(lineWidth: 2))
                 .symbol {
                     Circle()
                         .strokeBorder(Color.blue01, lineWidth: 3)
@@ -73,7 +48,6 @@ struct TodayLifeSavingChart: View {
                         .frame(width: 12, height: 12)
                 }
             }
-            
         }
         .foregroundStyle(Color.blue01)
         .frame(height: 170)
@@ -89,11 +63,13 @@ struct TodayLifeSavingChart: View {
                 }
             }
         }
-
+        .chartYScale(domain: 0 ... upperBound)
+        .chartYAxis {
+            AxisMarks(values: ticks) { value in
+                AxisTick()
+                AxisGridLine()
+                AxisValueLabel()
+            }
+        }
     }
-}
-
-// MARK: - Preview
-#Preview {
-    TodayLifeSavingChart()
 }

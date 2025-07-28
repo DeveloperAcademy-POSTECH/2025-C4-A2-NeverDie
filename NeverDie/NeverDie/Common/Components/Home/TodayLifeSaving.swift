@@ -34,8 +34,7 @@ struct TodayLifeSaving: View {
                 [
                     lifeSaving.day.map { "\($0)일" },
                     lifeSaving.hour.map { "\($0)시간" },
-                    "\(lifeSaving.minute)분" /// minute는 필수니까 무조건 표시
-                ]
+                    lifeSaving.minute.map { "\($0)분" },                ]
                     .compactMap { $0 } /// nil인 항목은 제거
                     .joined(separator: " ")
             )
