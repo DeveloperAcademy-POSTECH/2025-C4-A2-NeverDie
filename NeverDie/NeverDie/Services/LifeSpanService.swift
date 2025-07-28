@@ -62,7 +62,7 @@ class LifeSpanService: ObservableObject {
         do {
             try modelContext.save()
         } catch {
-            print("❌ LifeSpan 저장 에러: \(error)")
+            // 에러 처리
         }
     }
     
@@ -83,7 +83,7 @@ class LifeSpanService: ObservableObject {
             }
             
         } catch {
-            print("❌ LifeSpan 일괄 변환 에러: \(error)")
+            // 에러 처리
         }
     }
     
