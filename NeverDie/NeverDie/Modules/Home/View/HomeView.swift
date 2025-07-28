@@ -81,9 +81,6 @@ struct HomeView: View {
                 icon: ImageResource.stepCountIcon,
                 title: "걸음수",
                 goalStage: 3,
-                currentStatus: 10521,
-                goal: 13000,
-                percent: 80,
                 walkingSessions: viewModel.weeklyWalkingSessions
             )
             
