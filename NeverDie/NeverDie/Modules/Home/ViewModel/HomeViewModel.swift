@@ -21,14 +21,13 @@ final class HomeViewModel {
     var todayLifeSpanData: [LifeSpan] = []
     var weeklyWalkingSessions: [WalkingSession] = []
     
-    // (임시) TodayLifeSaving에 전달할 timeData 타입의 속성 추가
+    // 오늘 총 수명 증가량 계산
     var todayLifeSavingData: timeData {
-        // 0~720분 사이 랜덤 값 생성
-        let totalMinutes = Int.random(in: 0...120)
+        let totalMinutes = todayLifeSpanData.reduce(0) { $0 + $1.lifeSpanChange }
         
         // 시와 분 계산
-        let hours = totalMinutes / 60
-        let minutes = totalMinutes % 60
+        let hours = Int(totalMinutes) / 60
+        let minutes = Int(totalMinutes) % 60
         
         return timeData(
             day: nil,
@@ -36,70 +35,77 @@ final class HomeViewModel {
             minute: minutes == 0 ? nil: minutes
         )
     }
-
     
     private let lifeSpanService: LifeSpanService
     private let healthKitService: HealthKitService
+    private var modelContext: ModelContext?
     
     init(lifeSpanService: LifeSpanService, healthKitService: HealthKitService) {
         self.lifeSpanService = lifeSpanService
         self.healthKitService = healthKitService
-        
+    }
+    
+    func configure(with modelContext: ModelContext) {
+        self.modelContext = modelContext
         Task {
             await loadInitialData()
         }
     }
     
-    // 초기 데이터 또는 더미 데이터를 세팅하는 함수
+    // 실제 SwiftData에서 데이터 로드
     func loadInitialData() async {
-        // 예: 더미 데이터 세팅
-        todayLifeSpanData = createDummyLifeSpanData()
-        weeklyWalkingSessions = createDummyWalkingSessions()
+        guard let modelContext = modelContext else { return }
         
-        // 추후 실제 서비스 연동 시에는
-        // 여기서 lifeSpanService 및 healthKitService 호출해서 데이터 받아서 할당
+        await MainActor.run {
+            do {
+                // 오늘 LifeSpan 데이터 조회
+                todayLifeSpanData = try fetchTodayLifeSpanData(from: modelContext)
+                
+                // 최근 7일 WalkingSession 데이터 조회
+                weeklyWalkingSessions = try fetchWeeklyWalkingSessions(from: modelContext)
+                
+                print("📊 HomeViewModel 데이터 로드 완료")
+                print("   - 오늘 LifeSpan: \(todayLifeSpanData.count)개")
+                print("   - 주간 WalkingSession: \(weeklyWalkingSessions.count)개")
+                
+            } catch {
+                print("❌ HomeViewModel 데이터 로드 실패: \(error)")
+                // 에러 발생시 빈 배열로 초기화
+                todayLifeSpanData = []
+                weeklyWalkingSessions = []
+            }
+        }
     }
     
     func refreshData() async {
         await loadInitialData()
     }
     
-    // MARK: - 더미 데이터 생성 메서드
+    // MARK: - 실제 데이터 조회 메서드
     
-    private func createDummyLifeSpanData() -> [LifeSpan] {
-        let calendar = Calendar.current
-        let now = Date()
-        var data: [LifeSpan] = []
-        
-        for hourOffset in (-11...0) {
-            let date = calendar.date(byAdding: .hour, value: hourOffset, to: now)!
-            let hour = calendar.component(.hour, from: date)
-            let lifeSpanChange = Double.random(in: 10...30) // 10~30분 수명 범위 랜덤
-            data.append(LifeSpan(date: date, hour: hour, lifeSpanChange: lifeSpanChange))
-        }
-        return data
-    }
-    
-    private func createDummyWalkingSessions() -> [WalkingSession] {
+    private func fetchTodayLifeSpanData(from modelContext: ModelContext) throws -> [LifeSpan] {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
-        var data: [WalkingSession] = []
         
-        for dayOffset in (-6...0) {
-            let date = calendar.date(byAdding: .day, value: dayOffset, to: today)!
-            let randomStepCount = Int.random(in: 5000...15000) // 5,000~15,000 걸음 범위 랜덤
-            let distance = Double(randomStepCount) * 0.7
-            let calories = Double(randomStepCount) * 0.04
-            let session = WalkingSession(
-                date: date,
-                hour: 12,
-                distance: distance,
-                stepCount: randomStepCount,
-                calories: calories
-            )
-            data.append(session)
-        }
-        return data
+        let descriptor = FetchDescriptor<LifeSpan>()
+        let allLifeSpans = try modelContext.fetch(descriptor)
+        
+        return allLifeSpans.filter { lifeSpan in
+            calendar.isDate(lifeSpan.date, inSameDayAs: today)
+        }.sorted { $0.hour < $1.hour }
+    }
+    
+    private func fetchWeeklyWalkingSessions(from modelContext: ModelContext) throws -> [WalkingSession] {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        let weekAgo = calendar.date(byAdding: .day, value: -6, to: today)!
+        
+        let descriptor = FetchDescriptor<WalkingSession>()
+        let allSessions = try modelContext.fetch(descriptor)
+        
+        return allSessions.filter { session in
+            session.date >= weekAgo && session.date <= today
+        }.sorted { $0.date < $1.date }
     }
 }
 

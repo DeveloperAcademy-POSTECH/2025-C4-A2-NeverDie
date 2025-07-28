@@ -19,6 +19,9 @@ struct SyncTestView: View {
     @Query private var allWalkingSessions: [WalkingSession]
     @Query private var allLifeSpans: [LifeSpan]
     
+    // 첫 실행 상태 추적
+    @State private var hasLaunchedBefore = UserDefaults.standard.bool(forKey: "HasLaunchedBefore")
+    
     init() {
         let healthKit = HealthKitService()
         let lifeSpan = LifeSpanService()
@@ -119,27 +122,31 @@ struct SyncTestView: View {
                     }
                     .disabled(syncService.isSync)
                     
+                    // 첫 실행 상태 리셋 버튼
+                    Button(action: {
+                        UserDefaults.standard.removeObject(forKey: "HasLaunchedBefore")
+                        hasLaunchedBefore = false
+                    }) {
+                        HStack {
+                            Image(systemName: "arrow.clockwise.circle")
+                            Text("첫 실행 상태 리셋")
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .foregroundColor(.gray)
+                        .cornerRadius(12)
+                    }
+                    
                     // 디버깅: 수동 수명 변환 버튼
                     if !allWalkingSessions.isEmpty && !syncService.isSync {
                         Button(action: {
                             Task {
-                                                                 print("🔍 수동 수명 변환 시작 (디버깅)")
-                                 print("🔍 현재 WalkingSession 개수: \(allWalkingSessions.count)")
-                                 print("🔍 현재 LifeSpan 개수: \(allLifeSpans.count)")
-                                 
-                                 // 첫 번째 WalkingSession 날짜로 테스트
-                                 if let firstSession = allWalkingSessions.first {
-                                     let testDate = firstSession.date
-                                     print("🔍 테스트 날짜: \(testDate)")
-                                     print("🔍 테스트 시간: \(firstSession.hour)시")
-                                     print("🔍 테스트 걸음수: \(firstSession.stepCount)")
-                                     
-                                     await lifeSpanService.convertDailyWalkingSessions(for: testDate)
-                                     print("🔍 수동 변환 완료")
-                                     
-                                     // 변환 후 다시 확인
-                                     print("🔍 변환 후 LifeSpan 개수: \(allLifeSpans.count)")
-                                 }
+                                                                                                 // 첫 번째 WalkingSession 날짜로 테스트
+                                if let firstSession = allWalkingSessions.first {
+                                    let testDate = firstSession.date
+                                    await lifeSpanService.convertDailyWalkingSessions(for: testDate)
+                                }
                             }
                         }) {
                             HStack {
@@ -261,29 +268,31 @@ struct SyncTestView: View {
                 .cornerRadius(16)
                 .shadow(radius: 2)
                 
-                // HealthKit 권한 상태
+                // 시스템 상태 정보
                 VStack(spacing: 15) {
                     Text("HealthKit 권한: \(healthKitService.isAuthorized ? "✅" : "❌")")
                         .font(.caption)
                         .foregroundColor(.secondary)
                     
+                    Text("첫 실행 완료: \(hasLaunchedBefore ? "✅" : "❌")")
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                    
                     HStack(spacing: 15) {
-                        if !healthKitService.isAuthorized {
-                            Button("권한 요청") {
-                                Task {
-                                    await healthKitService.requestHealthKitPermissions()
-                                    // 권한 요청 후 상태 다시 확인
-                                    await healthKitService.checkAuthorizationStatus()
-                                }
+                        Button("권한 요청") {
+                            Task {
+                                await healthKitService.requestHealthKitPermissions()
+                                await healthKitService.checkAuthorizationStatus()
+                                hasLaunchedBefore = UserDefaults.standard.bool(forKey: "HasLaunchedBefore")
                             }
-                            .font(.caption)
-                            .foregroundColor(.blue)
                         }
+                        .font(.caption)
+                        .foregroundColor(.blue)
                         
                         Button("🔄 상태 새로고침") {
                             Task {
-                                print("🔄 수동 권한 상태 새로고침")
                                 await healthKitService.checkAuthorizationStatus()
+                                hasLaunchedBefore = UserDefaults.standard.bool(forKey: "HasLaunchedBefore")
                             }
                         }
                         .font(.caption)
@@ -303,6 +312,10 @@ struct SyncTestView: View {
                                 .foregroundColor(.secondary)
                             
                             VStack(alignment: .leading, spacing: 4) {
+                                Text("📱 앱 재설치 필요 (Info.plist 변경 적용)")
+                                    .foregroundColor(.red)
+                                    .fontWeight(.medium)
+                                Text("")
                                 Text("1. 설정 앱 → 개인정보 보호 및 보안")
                                 Text("2. 건강 → NeverDie")
                                 Text("3. '걸음수' 켜기")
@@ -343,12 +356,14 @@ struct SyncTestView: View {
             
             // HealthKit 권한 상태만 확인 (요청하지 않음)
             await healthKitService.checkAuthorizationStatus()
+            
+            // 첫 실행 상태 업데이트
+            hasLaunchedBefore = UserDefaults.standard.bool(forKey: "HasLaunchedBefore")
         }
         .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-            // 앱이 포그라운드로 돌아올 때 권한 상태 재확인
             Task {
-                print("📱 앱 포그라운드 복귀 - 권한 상태 재확인")
                 await healthKitService.checkAuthorizationStatus()
+                hasLaunchedBefore = UserDefaults.standard.bool(forKey: "HasLaunchedBefore")
             }
         }
     }

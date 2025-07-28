@@ -31,12 +31,8 @@ class SyncService: ObservableObject {
     
     /// 전체 HealthKit 데이터를 동기화 (HealthKit → WalkingSession → LifeSpan)
     func syncAllData(modelContext: ModelContext) async {
-        guard !isSync else { 
-            print("⚠️ 이미 동기화 진행 중입니다")
-            return 
-        }
+        guard !isSync else { return }
         
-        print("🔄 전체 데이터 동기화 시작")
         isSync = true
         syncProgress = 0.0
         syncMessage = "동기화 준비 중..."
@@ -66,11 +62,8 @@ class SyncService: ObservableObject {
             syncMessage = "동기화 완료!"
             lastSyncDate = Date()
             
-            print("✅ 전체 데이터 동기화 완료")
-            
         } catch {
             syncMessage = "동기화 실패: \(error.localizedDescription)"
-            print("❌ 동기화 실패: \(error)")
         }
     }
     
@@ -81,9 +74,6 @@ class SyncService: ObservableObject {
         do {
             // 모든 WalkingSession 조회
             let allSessions = try modelContext.fetch(FetchDescriptor<WalkingSession>())
-            let totalSessions = allSessions.count
-            
-            print("📊 변환할 WalkingSession: \(totalSessions)개")
             
             // 날짜별로 그룹화하여 변환
             let groupedSessions = Dictionary(grouping: allSessions) { session in
@@ -93,7 +83,7 @@ class SyncService: ObservableObject {
             let sortedDates = groupedSessions.keys.sorted()
             
             for (index, date) in sortedDates.enumerated() {
-                syncMessage = "수명 변환 중... (\(date.formatted(date: .abbreviated, time: .omitted)))"
+                syncMessage = "수명 변환 중..."
                 
                 await lifeSpanService.convertDailyWalkingSessions(for: date)
                 
@@ -105,10 +95,8 @@ class SyncService: ObservableObject {
                 try await Task.sleep(nanoseconds: 10_000_000) // 0.01초
             }
             
-            print("✅ LifeSpan 변환 완료")
-            
         } catch {
-            print("❌ LifeSpan 변환 실패: \(error)")
+            // 에러 처리
         }
     }
     

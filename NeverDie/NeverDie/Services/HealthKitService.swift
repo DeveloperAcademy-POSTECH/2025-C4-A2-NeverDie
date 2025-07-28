@@ -36,37 +36,23 @@ class HealthKitService: ObservableObject {
     }
     
     func requestHealthKitPermissions() async {
-        print("🔄 HealthKit 권한 요청 시작")
-        
-        // 요청 전 상태 확인
-        await updateAuthorizationStatus()
-        
         do {
             try await healthStore.requestAuthorization(toShare: [], read: readTypes)
-            print("✅ HealthKit 권한 요청 완료, 상태 재확인 중...")
-            
-            // 잠시 대기 후 상태 재확인 (시스템 업데이트 시간)
             try await Task.sleep(nanoseconds: 500_000_000) // 0.5초
             await updateAuthorizationStatus()
-            
         } catch {
             print("❌ HealthKit 권한 요청 실패: \(error.localizedDescription)")
         }
     }
     
     private func updateAuthorizationStatus() async {
-        let stepCountStatus = healthStore.authorizationStatus(for: HKObjectType.quantityType(forIdentifier: .stepCount)!)
+        guard let stepCountType = HKObjectType.quantityType(forIdentifier: .stepCount) else {
+            return
+        }
+        
+        let stepCountStatus = healthStore.authorizationStatus(for: stepCountType)
         await MainActor.run {
             isAuthorized = stepCountStatus == .sharingAuthorized
-            
-            let statusText = switch stepCountStatus {
-            case .notDetermined: "결정 안됨(0)"
-            case .sharingDenied: "거부됨(1)"
-            case .sharingAuthorized: "허용됨(2)"
-            @unknown default: "알 수 없음"
-            }
-            
-            print("🔍 HealthKit 권한 상태: \(statusText) -> isAuthorized: \(isAuthorized)")
         }
     }
     
@@ -176,15 +162,11 @@ class HealthKitService: ObservableObject {
     func fetchAndConvertAllWalkingSessions(modelContext: ModelContext) async {
         let dateRange = calculateFullSyncDateRange()
         
-        print("🔄 전체 기간 동기화 시작: \(dateRange.start.formatted(date: .abbreviated, time: .omitted)) ~ \(dateRange.end.formatted(date: .abbreviated, time: .omitted))")
-        
         var currentDate = dateRange.start
         while currentDate <= dateRange.end {
             await fetchAndConvertDailyWalkingSessions(for: currentDate, modelContext: modelContext)
             currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate) ?? currentDate
         }
-        
-        print("✅ 전체 기간 동기화 완료")
     }
     
     /// 전체 동기화할 날짜 범위 계산 (MVP: 최근 90일)
@@ -315,7 +297,7 @@ class HealthKitService: ObservableObject {
                         modelContext.insert(session)
                     }
                 } catch {
-                    print("❌ WalkingSession 조회/저장 에러: \(error)")
+                    // 에러 처리
                 }
             }
             
@@ -323,7 +305,7 @@ class HealthKitService: ObservableObject {
             do {
                 try modelContext.save()
             } catch {
-                print("❌ WalkingSession 일괄 저장 에러: \(error)")
+                // 에러 처리
             }
         }
     }
