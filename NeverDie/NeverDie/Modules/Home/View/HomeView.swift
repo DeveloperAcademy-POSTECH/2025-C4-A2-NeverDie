@@ -43,6 +43,9 @@ struct HomeView: View {
                     bottomContents
                 }
             }
+            .refreshable {
+                await viewModel.refreshData()
+            }
             .background(Color.grayBg)
             .safeAreaPadding(.horizontal, 16)
             .navigationDestination(isPresented: $showDetailView){
