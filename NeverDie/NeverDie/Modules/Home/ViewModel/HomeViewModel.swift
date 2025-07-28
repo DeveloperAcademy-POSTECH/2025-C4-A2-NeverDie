@@ -13,7 +13,7 @@ struct timeData: Identifiable {
     let id = UUID()
     let day: Int?
     let hour: Int?
-    let minute: Int
+    let minute: Int?
 }
 
 @Observable
@@ -33,7 +33,7 @@ final class HomeViewModel {
         return timeData(
             day: nil,
             hour: hours == 0 ? nil : hours,
-            minute: minutes
+            minute: minutes == 0 ? nil: minutes
         )
     }
 
