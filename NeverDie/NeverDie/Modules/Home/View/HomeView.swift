@@ -9,13 +9,6 @@ import SwiftUI
 
 // MARK: - DummyData Model
 
-struct timeData: Identifiable {
-    let id = UUID()
-    let day: Int?
-    let hour: Int?
-    let minute: Int
-}
-
 struct HomeView: View {
     
     // MARK: - Property
@@ -30,9 +23,6 @@ struct HomeView: View {
     
     /// 상세 뷰로 이동할지 말지
     @State private var showDetailView = false
-    
-    // MARK: - DummyData
-    let todaySummaryData = timeData(day: nil, hour: 1, minute: 30)
     
     // MARK: - Body
     var body: some View {
@@ -61,7 +51,7 @@ struct HomeView: View {
             showDetailView = true
         }) {
             VStack(spacing: 10) {
-                TodayLifeSaving(lifeSaving: todaySummaryData)
+                TodayLifeSaving(lifeSaving: viewModel.todayLifeSavingData)
                 TodayLifeSavingChart(lifeSpanData: viewModel.todayLifeSpanData)
             }
             .padding(.horizontal, 20)
