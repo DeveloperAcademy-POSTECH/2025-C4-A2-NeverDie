@@ -7,5 +7,9 @@
 		<string>PretendardVariable.ttf</string>
 		<string>SUIT-Heavy.otf</string>
 	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>이 앱은 걸음수 데이터를 읽어와서 수명 연장 효과를 계산합니다.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>이 앱은 건강 데이터를 업데이트할 수 있습니다.</string>
 </dict>
 </plist>
