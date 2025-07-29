@@ -16,10 +16,13 @@ struct HomeView: View {
     @Environment(\.modelContext) private var modelContext
     
     /// 뷰모델
-    @State private var viewModel = HomeViewModel(
+    private var viewModel = HomeViewModel(
         lifeSpanService: LifeSpanService(),
         healthKitService: HealthKitService()
     )
+    
+    /// HealthKit 서비스 (실제 걸음수용)
+    @StateObject private var healthKitService = HealthKitService()
     
     /// 모달을 보여줄지 말지
     @State private var showAddGoalModalView = false
@@ -43,13 +46,24 @@ struct HomeView: View {
                 }
             }
             .refreshable {
-                // 새로고침시 동기화 실행 → HomeViewModel 데이터 갱신
-                await performRefreshSync()
+                // HealthKit 걸음수 데이터 새로고침
+                await healthKitService.fetchTodayHealthData()
+                // 뷰모델 데이터 새로고침
+                await viewModel.refreshData()
             }
             .background(Color.grayBg)
             .safeAreaPadding(.horizontal, 16)
             .navigationDestination(isPresented: $showDetailView){
                 StepDetailView()
+            }
+            .onAppear {
+                Task {
+                    // HealthKit 권한 요청 및 오늘 걸음수 가져오기
+                    if !healthKitService.isAuthorized {
+                        await healthKitService.requestHealthKitPermissions()
+                    }
+                    await healthKitService.fetchTodayHealthData()
+                }
             }
         }
         .task {
@@ -91,6 +105,7 @@ struct HomeView: View {
                 icon: ImageResource.stepCountIcon,
                 title: "걸음수",
                 goalStage: 3,
+                todayStepCount: Int(healthKitService.stepCount),
                 walkingSessions: viewModel.weeklyWalkingSessions
             )
             

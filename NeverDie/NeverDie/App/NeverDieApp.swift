@@ -29,6 +29,7 @@ struct NeverDieApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+            //SyncTestView()
         }
         .modelContainer(sharedModelContainer)
     }
