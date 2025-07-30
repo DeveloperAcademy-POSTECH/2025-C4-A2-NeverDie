@@ -20,6 +20,9 @@ struct GoalStatus: View {
     /// 몇 단계 목표인지
     let goalStage: Int
     
+    /// 오늘 실제 걸음수
+    let todayStepCount: Int
+    
     /// 걸음수 정보 (차트에 전달)
     let walkingSessions: [WalkingSession]
     
@@ -36,11 +39,9 @@ struct GoalStatus: View {
         return indicator.stages.first(where: { $0.stageNum == goalStage })?.stageGoal ?? 0
     }
     
-    /// 가장 최근 걸음 수 (최근 날짜의 걸음 수)
+    /// 현재 걸음 수 (오늘 실제 걸음수)
     private var currentStatus: Int {
-        walkingSessions
-            .sorted { $0.date < $1.date }
-            .last?.stepCount ?? 0
+        return todayStepCount
     }
     
     /// 목표 대비 진행률(%) 계산
