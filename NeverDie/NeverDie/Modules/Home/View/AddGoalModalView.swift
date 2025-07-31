@@ -17,6 +17,29 @@ struct AddGoalModalView: View {
     /// 선택된 목표를 저장
     @State private var selectedStageID: UUID?
     
+    /// 앱스토리지에 저장할 UUID 문자열
+    @AppStorage("selectedStageUUID") private var selectedStageUUID: String?
+    
+    /// 모달 닫기용
+    @Environment(\.dismiss) private var dismiss
+    
+    
+    // 저장 후 모달 닫기
+    private func saveSelectionAndDismiss() {
+        guard let selectedID = selectedStageID else {
+            // 선택된 목표가 없으면 저장하지 않고 그냥 닫거나, 필요시 알림 처리 가능
+            dismiss()
+            return
+        }
+        
+        // 앱스토리지에 저장
+        selectedStageUUID = selectedID.uuidString
+        print("저장 완료: \(selectedStageUUID ?? "")")
+        
+        // 모달 닫기
+        dismiss()
+    }
+    
     // MARK: - Body
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -28,7 +51,7 @@ struct AddGoalModalView: View {
             .background(Color.grayBg)
             
             MainColorButton(text: "저장하기", action: {
-                print("저장하기 클릭")
+                saveSelectionAndDismiss()
             })
         }
         .safeAreaPadding(.horizontal, 16)

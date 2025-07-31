@@ -36,6 +36,9 @@ struct HomeView: View {
     @State private var autoSyncLifeSpanService: LifeSpanService?
     @State private var hasAutoSynced = false
     
+    /// 저장된 선택된 목표 단계 UUID (String 형태)
+    @AppStorage("selectedStageUUID") private var selectedStageUUID: String?
+    
     // MARK: - Body
     var body: some View {
         NavigationStack {
@@ -101,16 +104,29 @@ struct HomeView: View {
         VStack(alignment: .leading, spacing: 8) {
             bottomContentsHeader
             
-            GoalStatus(
-                icon: ImageResource.stepCountIcon,
-                title: "걸음수",
-                goalStage: 3,
-                todayStepCount: Int(healthKitService.stepCount),
-                walkingSessions: viewModel.weeklyWalkingSessions
-            )
-            
+            if let uuidStr = selectedStageUUID,
+               let uuid = UUID(uuidString: uuidStr),
+               let selectedStage = goalInfoList.first?.stages.first(where: { $0.id == uuid }) {
+                
+                GoalStatus(
+                    icon: ImageResource.stepCountIcon,
+                    title: "걸음수",
+                    goalStage: selectedStage.stageNum,
+                    todayStepCount: Int(healthKitService.stepCount),
+                    walkingSessions: viewModel.weeklyWalkingSessions
+                )
+                
+            } else {
+                Text("목표 없음")
+                    .font(.m16)
+                    .foregroundStyle(Color.grayCaption02)
+                    .figmaLineHeight(fontSize: 16)
+                    .padding(.top, 50)
+                    .frame(maxWidth: .infinity, alignment: .center)
+            }
         }
     }
+
     
     /// '목표 현황' 섹션의 헤더: 타이틀 + 추가 버튼
     /// + 버튼을 클릭시 AddGoalModalView가 나타남
