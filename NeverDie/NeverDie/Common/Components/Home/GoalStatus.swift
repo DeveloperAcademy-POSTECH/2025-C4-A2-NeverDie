@@ -11,6 +11,8 @@ struct GoalStatus: View {
     
     // MARK: - Property
     
+    @AppStorage("selectedStageUUID") private var selectedStageUUID: String?
+    
     /// 이 목표에 해당하는 지표의 아이콘
     let icon: ImageResource
     
@@ -94,7 +96,7 @@ struct GoalStatus: View {
         .animation(.easeInOut, value: isExpanded)
         .contextMenu {
             Button(role: .destructive, action: {
-                print("🗑️ 목표 삭제 버튼 클릭")
+                selectedStageUUID = nil
             }) {
                 Label("목표 삭제", systemImage: "xmark.bin")
             }
