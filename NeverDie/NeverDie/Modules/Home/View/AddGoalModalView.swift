@@ -24,8 +24,8 @@ struct AddGoalModalView: View {
                 modalHeader
                 modalContents
                     .padding(.top, 28)
-                    .background(Color.grayBg)
             }
+            .background(Color.grayBg)
             
             MainColorButton(text: "저장하기", action: {
                 print("저장하기 클릭")

@@ -24,23 +24,23 @@ struct StepSummaryView: View {
                     .fill(color)
                     .frame(width: 10, height: 10)
                 Text(title)
-                    .font(.captionSemiBold12)
+                    .font(.sb14)
                     .foregroundStyle(.grayCaption02)
             }
 
             // 수치 출력
             (
                 Text(isTimeValue ? formatTime(from: value) : "\(value.formatted())")
-                    .font(.largeTitleSemiBold32)
+                    .font(.sfB32)
                 +
                 Text(isTimeValue ? "" : " \(unit)") // 시간이면 단위 생략
-                    .font(.calloutSemiBold14)
+                    .font(.sb16)
                     .foregroundStyle(.grayCaption02)
             )
 
             // 보조 텍스트
             Text(subtitle)
-                .font(.captionSemiBold12)
+                .font(.sb14)
                 .foregroundStyle(.grayCaption02)
         }
     }
