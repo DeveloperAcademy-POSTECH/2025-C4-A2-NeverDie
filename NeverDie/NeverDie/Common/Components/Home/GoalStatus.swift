@@ -151,10 +151,12 @@ struct GoalStatus: View {
                     HStack(spacing: 2) {
                         Text("\(currentStatus)")
                             .font(.sfB32)
+                            .foregroundStyle(Color.black01)
                             .figmaLineHeight(fontSize: 32)
                         
                         Text("걸음")
                             .font(.sb16)
+                            .foregroundStyle(Color.black01)
                             .figmaLineHeight(fontSize: 16)
                     }
                 }

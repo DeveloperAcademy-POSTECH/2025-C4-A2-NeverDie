@@ -43,6 +43,7 @@ struct StepDetailView: View {
                         // MARK: - 중간 제목 텍스트
                         Text("누적 수명 추이")
                             .font(.b24)
+                            .foregroundStyle(Color.black01)
                             .padding(.horizontal, 16)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.bottom, 10)

@@ -55,12 +55,14 @@ struct TodayLifeSavingChart: View {
             AxisMarks(values: .stride(by: .hour, count: 3)) { value in
                 AxisTick()
                 AxisGridLine()
+                    .foregroundStyle(Color.grayCaption01)
                 AxisValueLabel() {
                     if let date = value.as(Date.self) {
                         let hour = Calendar.current.component(.hour, from: date)
                         Text("\(hour)시")
                     }
                 }
+                .foregroundStyle(Color.grayCaption01)
             }
         }
         .chartYScale(domain: 0 ... upperBound)
@@ -68,7 +70,9 @@ struct TodayLifeSavingChart: View {
             AxisMarks(values: ticks) { value in
                 AxisTick()
                 AxisGridLine()
+                    .foregroundStyle(Color.grayCaption01)
                 AxisValueLabel()
+                    .foregroundStyle(Color.grayCaption01)
             }
         }
     }
